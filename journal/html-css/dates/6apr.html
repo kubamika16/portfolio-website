@@ -76,6 +76,69 @@
         color: green;
         font-weight: bold;
       }
+      .social {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: 1px solid;
+      }
+      .yt {
+        background-color: red;
+        color: white;
+        border-radius: 5px;
+      }
+      .instagram {
+        background-color: white;
+        color: blue;
+        border-color: blue;
+        border-radius: 5px;
+      }
+      .tweeter {
+        font-weight: bold;
+        color: white;
+        background-color: blue;
+        border-radius: 20px;
+      }
+      .stretch {
+        color: white;
+        background-color: green;
+        padding: 10px;
+        transition: padding 0.5s ease-in-out;
+      }
+      .stretch:hover {
+        cursor: pointer;
+        padding: 30px;
+      }
+
+      .shadow {
+        color: white;
+        background-color: green;
+        padding: 10px;
+        cursor: pointer;
+        box-shadow: 3px 3px 10px black;
+      }
+      .shadow:active {
+        transform: translate(2px, 2px);
+        box-shadow: none;
+      }
+      .margin-padding {
+        color: white;
+        background-color: green;
+        border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-right: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .margin-padding:hover {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-right: 20px;
+      }
     </style>
 
     <h1>
@@ -96,12 +159,25 @@
     <button class="linkedin apply">Apply on company website</button>
     <button class="linkedin save">Save</button>
 
-    <h1>LESSON 2</h1>
+    <h1>Lesson 2</h1>
     <a href="https://www.amazon.co.uk/">Back to Amazon</a>
     <p class="title">Nike Black Running Shoes</p>
     <p class="price">$39 - in stock.</p>
     <p>Free delivery tomorrow.</p>
     <button class="amazon">Add to cart</button>
     <button class="amazon">Buy now</button>
+
+    <h1>Lesson 3</h1>
+    <p>4f. Tweet button to use padding instead of height/width +</p>
+    <button class="social yt">SUBSCRIBE</button>
+    <button class="social instagram">JOIN</button>
+    <button class="social tweeter">Tweet</button>
+    <p>4i. Stretch</p>
+    <button class="stretch">Stretch</button>
+    <button class="shadow">Shadow</button>
+    <p>4k. Margin and padding together</p>
+    <button class="margin-padding">One</button>
+    <button class="margin-padding">Two</button>
+    <button class="margin-padding">Three</button>
   </body>
 </html>
