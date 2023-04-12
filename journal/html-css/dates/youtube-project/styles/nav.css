@@ -1,0 +1,36 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  height: 55px;
+  justify-content: space-between;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: lightpink;
+  width: 150px;
+  padding: 10px;
+}
+
+.hamburger-menu {
+  width: 25px;
+}
+
+.youtube-logo {
+  width: 100px;
+}
+
+.middle-nav {
+  background-color: lightblue;
+  flex: 1;
+  margin-left: 70px;
+  margin-right: 35px;
+  max-width: 500px;
+}
+
+.right-nav {
+  background-color: lightpink;
+  width: 200px;
+}

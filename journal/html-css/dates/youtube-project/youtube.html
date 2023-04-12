@@ -13,7 +13,13 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="./styles/nav.css" />
+    <link rel="stylesheet" href="./styles/twitter.css" />
     <style>
+      body {
+        margin: 0;
+      }
+
       .grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -127,7 +133,30 @@
     </style>
   </head>
   <body>
-    <input type="text" name="" id="" placeholder="Search" class="search-bar" />
+    <div class="navigation">
+      <div class="left-nav">
+        <img
+          src="./imgs/youtube/hamburger-menu.svg"
+          alt=""
+          class="hamburger-menu"
+        />
+        <img
+          src="./imgs/youtube/youtube-logo.svg"
+          class="youtube-logo"
+          alt=""
+        />
+      </div>
+      <div class="middle-nav">
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Search"
+          class="search-bar"
+        />
+      </div>
+      <div class="right-nav">Right nav</div>
+    </div>
 
     <div class="grid-container">
       <div class="video-container">
@@ -142,7 +171,7 @@
             <p class="video-title">
               Talking Tech and AI with Google CEO Sundar Pichai!
             </p>
-            <p class="video-author">Marques Brownlee</p>
+            <p class="video-author">Gary Vee</p>
             <p class="video-stats">3.4M views &#183; 6 months ago</p>
           </div>
         </div>
@@ -160,7 +189,7 @@
             <p class="video-title">
               Talking Tech and AI with Google CEO Sundar Pichai!
             </p>
-            <p class="video-author">Marques Brownlee</p>
+            <p class="video-author">Gary Vee</p>
             <p class="video-stats">3.4M views &#183; 6 months ago</p>
           </div>
         </div>
@@ -178,7 +207,7 @@
             <p class="video-title">
               Talking Tech and AI with Google CEO Sundar Pichai!
             </p>
-            <p class="video-author">Marques Brownlee</p>
+            <p class="video-author">Gary Vee</p>
             <p class="video-stats">3.4M views &#183; 6 months ago</p>
           </div>
         </div>
@@ -196,7 +225,7 @@
             <p class="video-title">
               Talking Tech and AI with Google CEO Sundar Pichai!
             </p>
-            <p class="video-author">Marques Brownlee</p>
+            <p class="video-author">Gary Vee</p>
             <p class="video-stats">3.4M views &#183; 6 months ago</p>
           </div>
         </div>
@@ -214,7 +243,7 @@
             <p class="video-title">
               Talking Tech and AI with Google CEO Sundar Pichai!
             </p>
-            <p class="video-author">Marques Brownlee</p>
+            <p class="video-author">Gary Vee</p>
             <p class="video-stats">3.4M views &#183; 6 months ago</p>
           </div>
         </div>
@@ -232,69 +261,37 @@
             <p class="video-title">
               Talking Tech and AI with Google CEO Sundar Pichai!
             </p>
-            <p class="video-author">Marques Brownlee</p>
+            <p class="video-author">Gary Vee</p>
             <p class="video-stats">3.4M views &#183; 6 months ago</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="fb-recommended-friends">
-      <div class="friend">
-        <!-- Image -->
-        <div class="person-image">
-          <img src="./imgs/other/Jocko-Willink650.webp" alt="" />
-        </div>
-        <!-- Bottom part -->
-        <div class="bottom-part">
-          <p class="friend-name">Jocko</p>
-          <div class="profile">
-            <div class="profile-picturee">
-              <img src="./imgs/other/jonah-hill.jpeg" alt="" />
-            </div>
-            <div class="mutual">2 mutual friends</div>
-          </div>
-          <!-- Add Friend -->
-          <button class="add">Add Friend</button>
+    <div class="twitter-post">
+      <div class="left-content">
+        <div class="logo">
+          <img src="./imgs/logos/cat.png" class="logo-img" alt="" />
         </div>
       </div>
-
-      <div class="friend">
-        <!-- Image -->
-        <div class="person-image">
-          <img src="./imgs/other/Jocko-Willink650.webp" alt="" />
+      <div class="right-content">
+        <div class="channel">
+          <p class="user-name">supersimple.dev</p>
+          <p class="channel-name">@SuperSimpleDev</p>
         </div>
-        <!-- Bottom part -->
-        <div class="bottom-part">
-          <p class="friend-name">Jocko</p>
-          <div class="profile">
-            <div class="profile-picturee">
-              <img src="./imgs/other/jonah-hill.jpeg" alt="" />
-            </div>
-            <div class="mutual">2 mutual friends</div>
+        <div class="title">
+          What is backend web developement? A complete overwiew. New video is
+          up!
+        </div>
+        <button class="youtube-video">
+          <div class="youtube-video-image"></div>
+          <div class="youtube-video-data">
+            <p class="youtube-video-data-link">youtube.com</p>
+            <p class="youtube-video-data-title">
+              Backend web developement - a complete overwiew (2021)
+            </p>
           </div>
-          <!-- Add Friend -->
-          <button class="add">Add Friend</button>
-        </div>
-      </div>
-
-      <div class="friend">
-        <!-- Image -->
-        <div class="person-image">
-          <img src="./imgs/other/Jocko-Willink650.webp" alt="" />
-        </div>
-        <!-- Bottom part -->
-        <div class="bottom-part">
-          <p class="friend-name">Jocko</p>
-          <div class="profile">
-            <div class="profile-picturee">
-              <img src="./imgs/other/jonah-hill.jpeg" alt="" />
-            </div>
-            <div class="mutual">2 mutual friends</div>
-          </div>
-          <!-- Add Friend -->
-          <button class="add">Add Friend</button>
-        </div>
+        </button>
       </div>
     </div>
   </body>
