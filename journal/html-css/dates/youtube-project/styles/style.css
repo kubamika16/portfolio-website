@@ -1,41 +1,80 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 3000px;
 }
 
-.right-nav-fixed {
-  right: 0;
+.double-sidebar {
+  display: flex;
+
+  position: fixed;
   top: 0;
-  bottom: 0;
-  width: 150px;
-  position: fixed;
-
-  background-color: green;
-  color: white;
-}
-
-.overlay {
-  position: fixed;
-  right: 0;
   left: 0;
-  top: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.profiles {
+  width: 100px;
+  padding: 10px;
+
+  background-color: #2d2f32;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.sticky-element {
-  border-radius: 10px;
-  width: 400px;
-  padding: 20px;
-  background-color: white;
-  color: black;
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.topics {
+  width: 200px;
+
+  padding: 15px;
+
+  background-color: #4d4f54;
+  color: white;
+
+  display: flex;
   flex-direction: column;
 }
 
-h1 {
-  margin-bottom: 0;
+.info-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+
+  font-weight: bold;
+}
+
+.plus-button {
+  font-size: 30px;
+  font-weight: 100;
+
+  color: lightgray;
+}
+
+.topic {
+  color: lightgray;
+
+  display: inline;
+
+  margin-bottom: 15px;
+}
+
+.topic::before {
+  content: '#';
+  margin-right: 5px;
 }
