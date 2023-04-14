@@ -183,5 +183,38 @@
 
       <img src="./imgs/discord-double-sidebar.png" alt="" />
     </article>
+
+    <article>
+      <h2>14/04/2023 (Friday) - Position relative/absolute</h2>
+      <p>
+        Today's lesson is dedicated to positioning elements on top of other
+        elements. The example below shows a t-shirt for sale. My task was to add
+        and position a "20% OFF" element at the top-right corner and an "Add to
+        cart" button at the bottom of the product image.
+      </p>
+      <p>
+        To achieve this, I created a container called "product" and set its
+        position property to "relative". This allowed me to use absolute
+        positioning for its child elements, the "discount" element and the
+        "button-container". By setting the position property of the "discount"
+        element to "absolute" and specifying "right: 0" and "top: 10px", I was
+        able to position it at the top-right corner of the product container.
+      </p>
+      <p>
+        Next, I added a "button-container" div and set its position property to
+        "absolute" as well. To position it at the bottom of the product
+        container, I set the "bottom" property to 0 and used "left: 0" and
+        "right: 0" to stretch it across the full width of the container. Inside
+        the "button-container", I used flexbox properties to center the "Add to
+        Cart" button both horizontally and vertically.
+      </p>
+      <p>
+        In conclusion, by combining the relative and absolute positioning
+        properties, I was able to create a visually appealing product layout
+        with overlaid elements, showcasing the power and flexibility of CSS
+        positioning techniques.
+      </p>
+      <img src="/journal/html-css/imgs/t-shirt.png" alt="" />
+    </article>
   </body>
 </html>
