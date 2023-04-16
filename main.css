@@ -1,0 +1,14 @@
+/* Globally accessible variables */
+:root {
+  --gray-10: #181818;
+}
+
+body {
+  background-color: var(--gray-10);
+  color: white;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+
+  padding: 1rem;
+}
