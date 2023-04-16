@@ -1,0 +1,29 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  gap: 0.5rem;
+
+  color: gray;
+}
+
+.nav-item:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
