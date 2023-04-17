@@ -20,6 +20,8 @@
   align-items: center;
 
   position: relative;
+
+  font-size: 1rem;
 }
 
 .navigation::after {
