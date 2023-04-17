@@ -1,0 +1,133 @@
+/* Globally accessible variables */
+:root {
+  --home-color: red;
+  --about-color: yellow;
+  --it-blog-color: green;
+  --projects-color: blue;
+  --github-color: magenta;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 1px solid white; */
+  height: 4rem;
+  align-items: center;
+
+  position: relative;
+}
+
+.navigation::after {
+  content: '';
+  position: absolute;
+  /* -1 because it offsets the body padding (from the main.css file) */
+  left: -1rem;
+  right: -1rem;
+  bottom: 0;
+  border-bottom: 0.01px solid rgb(36, 36, 36);
+}
+
+.website-author {
+  display: none;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  color: gray;
+}
+
+.nav-item {
+  min-width: 3.2rem;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.nav-item a {
+  padding-bottom: 0.3rem;
+}
+
+.nav-item.home a:hover {
+  border-bottom: 3px solid var(--home-color);
+}
+
+.nav-item.about a:hover {
+  border-bottom: 3px solid var(--about-color);
+}
+
+.nav-item.it-blog a:hover {
+  border-bottom: 3px solid var(--it-blog-color);
+}
+
+.nav-item.projects a:hover {
+  border-bottom: 3px solid var(--projects-color);
+}
+
+.nav-item.github a:hover {
+  border-bottom: 3px solid var(--github-color);
+}
+
+.light-toggle {
+  background-color: rgb(45, 45, 45);
+
+  padding: 0.1rem 0.2rem;
+  border-radius: 20%;
+}
+
+@media (min-width: 700px) {
+  .left-side-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+  }
+
+  .website-author {
+    display: inline;
+  }
+
+  .website-author span {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+
+  .nav-item.home {
+    display: none;
+  }
+
+  .navigation {
+    height: 4.5rem;
+
+    font-size: 1.1rem;
+  }
+
+  nav {
+    gap: 2rem;
+  }
+
+  .navigation::after {
+    display: none;
+  }
+
+  .light-toggle {
+    padding: 0.3rem 0.5rem;
+  }
+}
