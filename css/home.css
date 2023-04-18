@@ -1,0 +1,30 @@
+.about-me-short {
+  max-width: 550px;
+}
+
+.about-me img {
+  width: 18rem;
+}
+
+@media (min-width: 700px) {
+  .about-me {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+    width: 100%;
+    margin-top: 4rem;
+
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .about-me-short h1 {
+    font-size: 3rem;
+  }
+
+  .about-me img {
+    width: 40%;
+    height: 100%;
+  }
+}
