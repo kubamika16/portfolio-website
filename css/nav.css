@@ -22,6 +22,8 @@
   position: relative;
 
   font-size: 1rem;
+
+  /* position: fixed; */
 }
 
 .navigation::after {
