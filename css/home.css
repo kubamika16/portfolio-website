@@ -42,36 +42,66 @@
   gap: 1rem;
 }
 
-.posts a {
+.single-post {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 1rem;
 
   text-decoration: none;
   color: inherit;
   border-bottom: 0.01px solid rgb(66, 66, 66);
 }
 
-.posts a:hover {
-  text-decoration: underline;
+.single-post .right-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.single-post img {
-  width: 3rem;
+.right-side .date {
+  min-width: 8rem;
+}
+/* 
+.single-post:hover {
+  text-decoration: underline;
+} */
+
+.right-side img {
+  width: 2.5rem;
   border-radius: 50%;
 
   justify-content: center;
 }
 
-.posts h3 {
+.single-post h3 {
   margin: 0;
   /* padding-bottom: 0.5rem; */
   font-weight: 500;
   font-size: inherit;
+
+  /* max-width: 15rem; */
+}
+
+.single-post:hover h3 {
+  text-decoration: underline;
+}
+
+.date {
+  margin: 0;
+
+  font-size: 1rem;
+  color: #5eddac;
+  font-family: Menlo, 'IBM Plex Mono', Menlo, monospace;
+  display: none;
+  text-align: right;
 }
 
 @media (min-width: 700px) {
+  /* ------------------------------------------- */
+  /* ------------------------------------------- */
+  /* ------------------------------------------- */
+  /* ABOUT ME SECTION */
   .container {
     margin-top: 4rem;
   }
@@ -83,7 +113,6 @@
 
     width: 100%;
 
-    /* justify-content: center; */
     align-items: center;
   }
 
@@ -94,5 +123,14 @@
   .about-me img {
     width: 40%;
     height: 100%;
+  }
+
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* ------------------------------------ */
+  /* LATEST POSTS SECTION */
+  .date {
+    display: block;
+    min-width: 5rem;
   }
 }
