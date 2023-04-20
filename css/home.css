@@ -1,3 +1,10 @@
+/* Globally accessible variables */
+:root {
+  --gray-10: #181818;
+  --border-slightly-grey: #353535;
+  --background-slightly-grey: #252525;
+}
+
 .about-me-short {
   max-width: 550px;
 }
@@ -13,8 +20,9 @@
 
 .view-all-btn {
   border-radius: 0.5rem;
+  border: 1px solid var(--border-slightly-grey);
 
-  background-color: #252525;
+  background-color: var(--background-slightly-grey);
   color: inherit;
 
   width: 5.5rem;
@@ -22,7 +30,7 @@
 
   font-size: 1rem;
 
-  border: none;
+  /* border: none; */
 }
 
 .view-all-btn:hover {
@@ -95,6 +103,25 @@
   font-family: Menlo, 'IBM Plex Mono', Menlo, monospace;
   display: none;
   text-align: right;
+}
+
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* PORTFOLIO SECTION */
+.all-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project {
+  /* width: 3rem;
+  height: 3rem; */
+
+  border: 1px solid var(--border-slightly-grey);
+  background-color: var(--background-slightly-grey);
+  border-radius: 0.3rem;
 }
 
 @media (min-width: 700px) {
