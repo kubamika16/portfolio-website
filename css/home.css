@@ -2,7 +2,8 @@
 :root {
   --gray-10: #181818;
   --border-slightly-grey: #353535;
-  --background-slightly-grey: #252525;
+  --background-slightly-grey: #212121;
+  --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
 }
 
 .about-me-short {
@@ -18,24 +19,23 @@
 /* ------------------------------------ */
 /* LATEST POSTS SECTION */
 
-.view-all-btn {
-  border-radius: 0.5rem;
+button {
+  border-radius: 10%;
   border: 1px solid var(--border-slightly-grey);
-
   background-color: var(--background-slightly-grey);
   color: inherit;
+}
 
+button:hover {
+  border: 1px solid rgb(86, 86, 86);
+  cursor: pointer;
+}
+
+.view-all-btn {
   width: 5.5rem;
   height: 3rem;
 
   font-size: 1rem;
-
-  /* border: none; */
-}
-
-.view-all-btn:hover {
-  border: 1px solid rgb(86, 86, 86);
-  cursor: pointer;
 }
 
 .container-header {
@@ -100,7 +100,7 @@
 
   font-size: 1rem;
   color: #5eddac;
-  font-family: Menlo, 'IBM Plex Mono', Menlo, monospace;
+  font-family: var(--date-font);
   display: none;
   text-align: right;
 }
@@ -113,15 +113,50 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  font-size: 1.1rem;
 }
 
 .project {
-  /* width: 3rem;
-  height: 3rem; */
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+
+  padding: 1rem;
 
   border: 1px solid var(--border-slightly-grey);
   background-color: var(--background-slightly-grey);
   border-radius: 0.3rem;
+}
+
+.project-date {
+  font-family: var(--date-font);
+  color: #f57ad0;
+}
+
+.project-title {
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-description {
+  margin-top: 0.5rem;
+  /* margin: 0.5rem 0; */
+
+  color: #9e9e9e;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-button {
+  font-size: inherit;
+  padding: 0.5rem;
+  background-color: #2c2c2c;
 }
 
 @media (min-width: 700px) {
