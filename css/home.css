@@ -4,6 +4,11 @@
   --border-slightly-grey: #353535;
   --background-slightly-grey: #212121;
   --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
+  --home-color: red;
+}
+
+.nav-item.home a {
+  border-bottom: 3px solid var(--home-color);
 }
 
 .about-me-short {
@@ -171,50 +176,6 @@ button:hover {
 /* --------------------- */
 /* FOOTER */
 
-.footer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 1rem;
-
-  font-size: 0.9rem;
-}
-
-.made-by {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.contact-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact-data {
-  margin: 0;
-}
-
-.contact img {
-  width: 2rem;
-  border-radius: 1rem;
-}
-
-.questions-feedback {
-  margin: 0;
-  font-size: 0.9rem;
-  font-style: italic; /* Optional: If you want to emphasize the message */
-}
-
 @media (min-width: 700px) {
   /* ------------------------------------------- */
   /* ------------------------------------------- */
@@ -264,19 +225,5 @@ button:hover {
   }
   .all-projects {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* --------------------- */
-  /* --------------------- */
-  /* --------------------- */
-  /* FOOTER */
-
-  .contact-section {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  .contact {
-    gap: 0.5rem;
   }
 }

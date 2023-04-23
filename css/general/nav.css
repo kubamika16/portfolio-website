@@ -111,9 +111,12 @@ nav {
     display: inline;
   }
 
-  .website-author span {
+  .website-author a {
     font-size: 1.7rem;
     font-weight: bold;
+
+    text-decoration: none;
+    color: inherit;
   }
 
   .nav-item.home {
