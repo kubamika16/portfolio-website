@@ -1,0 +1,54 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+
+  font-size: 0.9rem;
+}
+
+.made-by {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-data {
+  margin: 0;
+}
+
+.contact img {
+  width: 2rem;
+  border-radius: 1rem;
+}
+
+.questions-feedback {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic; /* Optional: If you want to emphasize the message */
+}
+
+@media (min-width: 700px) {
+  .contact-section {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .contact {
+    gap: 0.5rem;
+  }
+}

@@ -19,11 +19,14 @@
   height: 4rem;
   align-items: center;
 
-  position: relative;
+  position: fixed;
+
+  width: calc(100% - 2rem);
 
   font-size: 1rem;
 
-  /* position: fixed; */
+  background-color: var(--gray-10);
+  z-index: 1000;
 }
 
 .navigation::after {
@@ -108,9 +111,12 @@ nav {
     display: inline;
   }
 
-  .website-author span {
+  .website-author a {
     font-size: 1.7rem;
     font-weight: bold;
+
+    text-decoration: none;
+    color: inherit;
   }
 
   .nav-item.home {
@@ -121,6 +127,8 @@ nav {
     height: 4.5rem;
 
     font-size: 1.1rem;
+
+    position: relative;
   }
 
   nav {
