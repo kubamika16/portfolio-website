@@ -4,7 +4,7 @@
   --about-color: yellow;
   --it-journal-color: green;
   --projects-color: blue;
-  --github-color: magenta;
+  --articles-color: magenta;
 }
 
 .layout {
@@ -87,8 +87,8 @@ nav {
   border-bottom: 3px solid var(--projects-color);
 }
 
-.nav-item.github a:hover {
-  border-bottom: 3px solid var(--github-color);
+.nav-item.articles a:hover {
+  border-bottom: 3px solid var(--articles-color);
 }
 
 .light-toggle {

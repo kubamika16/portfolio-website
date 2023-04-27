@@ -1,4 +1,3 @@
-/* Globally accessible variables */
 :root {
   --home-color: red;
   --about-color: yellow;
@@ -7,6 +6,6 @@
   --articles-color: magenta;
 }
 
-.nav-item.projects a {
-  border-bottom: 3px solid var(--projects-color);
+.nav-item.it-journal a {
+  border-bottom: 3px solid var(--it-journal-color);
 }

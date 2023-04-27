@@ -7,6 +7,6 @@
   --articles-color: magenta;
 }
 
-.nav-item.projects a {
-  border-bottom: 3px solid var(--projects-color);
+.nav-item.articles a {
+  border-bottom: 3px solid var(--articles-color);
 }
