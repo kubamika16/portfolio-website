@@ -5,6 +5,7 @@
   --background-slightly-grey: #212121;
   --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
   --home-color: red;
+  --link: #9ca0fa;
 }
 
 h3 {
@@ -32,6 +33,14 @@ h3:hover {
 
 .about-me img {
   width: 18rem;
+}
+
+.link {
+  color: var(--link);
+}
+
+.link:hover {
+  text-decoration: none;
 }
 
 /* ------------------------------------ */

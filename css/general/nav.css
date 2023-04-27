@@ -2,7 +2,7 @@
 :root {
   --home-color: red;
   --about-color: yellow;
-  --it-blog-color: green;
+  --it-journal-color: green;
   --projects-color: blue;
   --github-color: magenta;
 }
@@ -79,8 +79,8 @@ nav {
   border-bottom: 3px solid var(--about-color);
 }
 
-.nav-item.it-blog a:hover {
-  border-bottom: 3px solid var(--it-blog-color);
+.nav-item.it-journal a:hover {
+  border-bottom: 3px solid var(--it-journal-color);
 }
 
 .nav-item.projects a:hover {
