@@ -45,14 +45,15 @@
 
 nav {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
   justify-content: center;
+  align-items: center;
 
   color: gray;
 }
 
 .nav-item {
-  min-width: 3.2rem;
+  /* min-width: 3.2rem; */
 }
 
 .nav-item:hover {
