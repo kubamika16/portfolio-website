@@ -52,7 +52,7 @@ h1 {
 }
 
 @media (min-width: 1150px) {
-  body {
+  .layout {
     max-width: 1150px;
     margin-left: auto;
     margin-right: auto;

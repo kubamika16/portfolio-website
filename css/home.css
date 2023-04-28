@@ -22,8 +22,10 @@ h3:hover {
 /* ------------------------------------ */
 /* ------------------------------------ */
 /* ABOUT ME SECTION*/
+
 .nav-item.home a {
   border-bottom: 3px solid var(--home-color);
+  color: white;
 }
 
 .about-me-short {
@@ -61,10 +63,9 @@ button:hover {
 }
 
 .view-all-btn {
-  width: 5.5rem;
-  height: 3rem;
+  padding: 0.7rem 1rem;
 
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .container-header {

@@ -9,4 +9,5 @@
 
 .nav-item.articles a {
   border-bottom: 3px solid var(--articles-color);
+  color: white;
 }

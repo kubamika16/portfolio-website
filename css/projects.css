@@ -9,4 +9,5 @@
 
 .nav-item.projects a {
   border-bottom: 3px solid var(--projects-color);
+  color: white;
 }

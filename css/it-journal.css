@@ -8,4 +8,5 @@
 
 .nav-item.it-journal a {
   border-bottom: 3px solid var(--it-journal-color);
+  color: white;
 }

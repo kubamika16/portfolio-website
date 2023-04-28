@@ -31,6 +31,19 @@
   margin: 0;
 }
 
+.contact-data a[href^='tel'] {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* a.phone-link,
+a.phone-link:visited,
+a.phone-link:hover,
+a.phone-link:active {
+  color: inherit;
+  text-decoration: none;
+} */
+
 .contact img {
   width: 2rem;
   border-radius: 1rem;
