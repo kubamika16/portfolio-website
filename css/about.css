@@ -63,7 +63,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
   .about-me {
     justify-content: space-between;
   }
