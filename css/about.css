@@ -45,6 +45,7 @@
     border: 1px solid var(--border-slightly-grey);
     background-color: var(--background-slightly-grey);
     color: inherit;
+    font-weight: 800;
 
     width: 12rem;
     height: 17rem;
@@ -59,5 +60,19 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+@media (min-width: 700px) {
+  .about-me {
+    justify-content: space-between;
+  }
+
+  .me-tile {
+    width: 15rem;
+    height: 20rem;
+  }
+  .about-me-left {
+    max-width: 40rem;
   }
 }
