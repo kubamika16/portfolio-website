@@ -18,16 +18,15 @@ h3:hover {
   text-decoration: underline;
 }
 
-/* ------------------------------------ */
-/* ------------------------------------ */
-/* ------------------------------------ */
-/* ABOUT ME SECTION*/
-
 .nav-item.home a {
   border-bottom: 3px solid var(--home-color);
   color: white;
 }
 
+/* ------------------------------------ */
+/* ------------------------------------ */
+/* ------------------------------------ */
+/* ABOUT ME SECTION*/
 .about-me-short {
   padding-top: 3rem;
   max-width: 550px;
@@ -224,16 +223,17 @@ button:hover {
 /* FOOTER */
 
 @media (min-width: 700px) {
+  .container {
+    margin-top: 2rem;
+  }
   /* ------------------------------------------- */
   /* ------------------------------------------- */
   /* ------------------------------------------- */
   /* ABOUT ME SECTION */
-  .container {
-    margin-top: 4rem;
-  }
 
   .about-me {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     gap: 2rem;
 
