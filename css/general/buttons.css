@@ -1,0 +1,33 @@
+:root {
+  --border-slightly-grey: #353535;
+  --background-slightly-grey: #212121;
+}
+
+button {
+  border-radius: 10%;
+  border: 1px solid var(--border-slightly-grey);
+  background-color: var(--background-slightly-grey);
+  color: inherit;
+}
+
+button:hover {
+  border: 1px solid rgb(86, 86, 86);
+  cursor: pointer;
+}
+
+.view-all-btn {
+  padding: 0.7rem 1rem;
+
+  font-size: 0.9rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-button {
+  font-size: inherit;
+  padding: 0.5rem;
+  background-color: #2c2c2c;
+}
