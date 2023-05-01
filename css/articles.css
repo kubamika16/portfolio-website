@@ -5,9 +5,59 @@
   --it-journal-color: green;
   --projects-color: blue;
   --articles-color: magenta;
+  --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 .nav-item.articles a {
   border-bottom: 3px solid var(--articles-color);
   color: white;
+}
+
+.all-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.year-section h2 {
+  margin-top: 0;
+}
+
+.article {
+  border-bottom: 0.01px solid rgb(66, 66, 66);
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.article:last-child {
+  /* Deletes border bottom from the last article */
+  border-bottom: none;
+}
+
+.article-name:hover {
+  text-decoration: underline;
+}
+
+.article-date {
+  margin: 0;
+
+  font-size: 1rem;
+  color: #5eddac;
+  font-family: var(--date-font);
+  display: none;
+  text-align: right;
+}
+
+@media (min-width: 700px) {
+  .article-date {
+    display: block;
+  }
 }

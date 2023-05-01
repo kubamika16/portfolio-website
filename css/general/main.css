@@ -37,6 +37,10 @@ h1 {
   color: white;
 }
 
+h3:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 700px) {
   body {
     padding: 3rem 2rem;
