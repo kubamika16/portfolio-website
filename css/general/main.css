@@ -1,6 +1,8 @@
 /* Globally accessible variables */
 :root {
   --gray-10: #181818;
+  --border-slightly-grey: #353535;
+  --background-slightly-grey: #212121;
 }
 
 body {
@@ -17,7 +19,7 @@ body {
 }
 
 main {
-  padding-top: 2rem;
+  padding-top: 3rem;
   line-height: 1.8rem;
 }
 

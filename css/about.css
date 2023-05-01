@@ -13,14 +13,6 @@
   color: white;
 }
 
-main {
-  padding-top: 2rem;
-}
-
-.about-me-left h1 {
-  /* margin-top: 0; */
-}
-
 .about-me-right {
   display: none;
 }
