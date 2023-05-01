@@ -17,7 +17,7 @@
 .message {
   height: 10rem;
 
-  margin-top: 10vw;
+  margin-top: 1rem;
   box-sizing: border-box;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -64,5 +64,11 @@
   .understand-button {
     padding: 1rem 1.3rem;
     font-size: 1.2rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .message {
+    margin-top: 1rem; /* Adjust this value based on your needs */
   }
 }
