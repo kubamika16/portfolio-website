@@ -24,7 +24,7 @@ main {
 }
 
 .container {
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   display: flex;
   flex-direction: column;
@@ -50,10 +50,6 @@ h1 {
   main {
     font-size: 1.25rem;
     line-height: 2rem;
-  }
-
-  .container {
-    margin-top: 4rem;
   }
 }
 
