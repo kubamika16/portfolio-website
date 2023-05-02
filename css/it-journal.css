@@ -20,6 +20,13 @@
   gap: 5rem;
 }
 
+.journal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .journal {
   border: 1px solid var(--border-slightly-grey);
   background-color: var(--background-slightly-grey);
@@ -36,6 +43,12 @@
   padding-right: 1.5rem;
   padding-top: 1rem;
   padding-bottom: 0;
+}
+
+.journal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .journal-date {
@@ -55,11 +68,11 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 30%; /* Adjust this value to control the height of the fading effect */
+  height: 60%; /* Adjust this value to control the height of the fading effect */
   background-image: linear-gradient(
     to top,
     rgba(33, 33, 33, 1),
-    rgba(33, 33, 33, 0.4)
+    rgba(33, 33, 33, 0.1)
   );
   pointer-events: none; /* Prevents the pseudo-element from blocking any interactions with the text */
 }
@@ -85,6 +98,22 @@ a:hover {
 }
 
 img {
-  height: 100%;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+article {
+  position: relative;
+  padding-top: 1rem;
+}
+
+article::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 5rem;
+  transform: translateX(-50%);
+  color: white;
+  border-top: 1px solid white;
 }
