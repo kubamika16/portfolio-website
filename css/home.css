@@ -117,6 +117,11 @@ h3 {
 
 .article-date {
   display: none;
+  margin: 0;
+
+  font-size: 1rem;
+  font-family: var(--date-font);
+  color: grey;
 }
 
 .post-title {
@@ -237,12 +242,6 @@ h3 {
 
   .article-date {
     display: block;
-
-    margin: 0;
-
-    font-size: 1rem;
-    font-family: var(--date-font);
-    color: grey;
   }
 
   .single-article img {

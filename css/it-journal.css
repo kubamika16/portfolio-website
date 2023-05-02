@@ -4,9 +4,87 @@
   --it-journal-color: green;
   --projects-color: blue;
   --articles-color: magenta;
+  --border-slightly-grey: #353535;
+  --background-slightly-grey: #212121;
+  --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
 }
 
 .nav-item.it-journal a {
   border-bottom: 3px solid var(--it-journal-color);
   color: white;
+}
+
+.all-journals {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.journal {
+  border: 1px solid var(--border-slightly-grey);
+  background-color: var(--background-slightly-grey);
+  border-radius: 1rem;
+
+  height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-sizing: border-box;
+
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+
+.journal-date {
+  font-size: 0.9rem;
+  font-family: var(--date-font);
+  color: grey;
+}
+
+.fading-text {
+  overflow: hidden;
+  position: relative;
+}
+
+.fading-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%; /* Adjust this value to control the height of the fading effect */
+  background-image: linear-gradient(
+    to top,
+    rgba(33, 33, 33, 1),
+    rgba(33, 33, 33, 0.4)
+  );
+  pointer-events: none; /* Prevents the pseudo-element from blocking any interactions with the text */
+}
+
+.journal-title h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.journal-content h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.journal-content p {
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  margin-bottom: 0;
+}
+
+img {
+  height: 100%;
+  width: 100%;
 }
