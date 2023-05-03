@@ -3,7 +3,6 @@
   --gray-10: #181818;
   --border-slightly-grey: #353535;
   --background-slightly-grey: #212121;
-  --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
   --home-color: red;
   --link: #9ca0fa;
 }
@@ -73,10 +72,6 @@ h3 {
   align-items: center;
 }
 
-.right-side .date {
-  min-width: 8rem;
-}
-
 .right-side img {
   width: 2.5rem;
   border-radius: 50%;
@@ -84,12 +79,8 @@ h3 {
   justify-content: center;
 }
 
-.date {
-  margin: 0;
-
-  font-size: 1rem;
-  color: #5eddac;
-  font-family: var(--date-font);
+.latest-journal-date {
+  color: var(--date-color-green);
   display: none;
   text-align: right;
 }
@@ -115,13 +106,9 @@ h3 {
   display: flex;
 }
 
-.article-date {
+.single-article-date {
   display: none;
-  margin: 0;
-
-  font-size: 1rem;
-  font-family: var(--date-font);
-  color: grey;
+  color: var(--date-color-grey);
 }
 
 .post-title {
@@ -159,9 +146,8 @@ h3 {
   border-radius: 0.3rem;
 }
 
-.project-date {
-  font-family: var(--date-font);
-  color: #f57ad0;
+.single-project-date {
+  color: var(--date-color-pink);
 }
 
 .project-title {
@@ -218,9 +204,9 @@ h3 {
   /* ------------------------------------ */
   /* ------------------------------------ */
   /* LATEST POSTS SECTION */
-  .date {
+  .latest-journal-date {
     display: block;
-    min-width: 5rem;
+    min-width: 8rem;
   }
 
   /* ----------------------------------------- */
@@ -240,7 +226,7 @@ h3 {
     padding: 1.5rem 1rem;
   }
 
-  .article-date {
+  .single-article-date {
     display: block;
   }
 

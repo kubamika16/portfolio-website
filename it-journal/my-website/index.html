@@ -6,28 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Website</title>
 
-    <link rel="stylesheet" href="/main.css" />
+    <!-- CSS file that contains properties for a whole website -->
+    <link rel="stylesheet" href="/css/general/main.css" />
+
+    <!-- CSS file that contains properties for a navigation pannel -->
+    <link rel="stylesheet" href="/css/general/nav.css" />
+
+    <!-- CSS file that contains properties for contact footer -->
+    <link rel="stylesheet" href="/css/general/footer.css" />
+
+    <!-- CSS file that contains properties for buttons -->
+    <link rel="stylesheet" href="/css/general/buttons.css" />
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <article>
-      <h2>
-        16/04/2023 (Sunday) - First day of creating portfolio website - Folder
-        Structure & website variables
-      </h2>
-      <p>
-        Today I finally start creating my own personal website. That will be my
-        long-term project. Website that will showcase my skills, experience,
-        projects and overall commitment for programming and improving my life
-        overall.
-      </p>
-      <p>
-        I will start off by making sure that the folder structure is adjusted to
-        my needs. Here is the project structure I will start with:
-      </p>
+    <div class="layout">
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- NAVIGATION -->
+      <section class="navigation">
+        <div class="left-side-nav">
+          <div class="website-author">
+            <span><a href="/index.html">Jakub Mika</a></span>
+          </div>
+          <nav>
+            <div class="nav-item home"><a href="/index.html">Home</a></div>
+            <div class="nav-item about">
+              <a href="/about/index.html">About</a>
+            </div>
+            <div class="nav-item it-journal">
+              <a href="/it-journal/index.html">IT Journal</a>
+            </div>
+            <div class="nav-item projects">
+              <a href="/projects/index.html">Projects</a>
+            </div>
+            <div class="nav-item articles">
+              <a href="/articles/index.html">Articles</a>
+            </div>
+          </nav>
+        </div>
+        <div class="light-toggle">🌙</div>
+      </section>
 
-      <pre>
+      <main>
+        <article>
+          <h2>
+            16/04/2023 (Sunday) - First day of creating portfolio website -
+            Folder Structure & website variables
+          </h2>
+          <p>
+            Today I finally start creating my own personal website. That will be
+            my long-term project. Website that will showcase my skills,
+            experience, projects and overall commitment for programming and
+            improving my life overall.
+          </p>
+          <p>
+            I will start off by making sure that the folder structure is
+            adjusted to my needs. Here is the project structure I will start
+            with:
+          </p>
+
+          <pre>
         portfolio-website/
         │   index.html
         │
@@ -55,162 +96,321 @@
             ├───images/
                 (image files)
         </pre
-      >
-    </article>
+          >
+        </article>
 
-    <article>
-      <h2>
-        17/04/2023 (Monday) - Building a Responsive Navigation
-      </h2>
-      <p>
-        Today, I started working on a responsive navigation for my website. For
-        screens smaller than 700px wide, I designed a simple yet aesthetic
-        navigation menu with five sections: Home, About, IT Blog, Projects, and
-        Github. These sections are aligned to the left side of the panel. On the
-        right side, I added a moon icon that serves as a toggle button. In the
-        future, this button will enable users to switch the website's color
-        scheme between day and night modes.
-      </p>
-      <p>
-        For larger screens, I created an expanded version of the navigation. My
-        name is displayed at the top of the navigation and will act as a link to
-        the homepage in the future, so I removed the Home section from the menu.
-        The moon icon remains the same but is slightly larger to accommodate the
-        larger screen size.
-      </p>
-      <img src="imgs/nav-demo.gif" alt="Navigation demo" />
-    </article>
-    <article>
-      <h2>
-        18/04/2023 (Tuesday) - Developing the "About Me" Section
-      </h2>
-      <p>
-        Today, I made a progress on my website by creating a responsive "About
-        Me" section that appears right after the navigation panel. This section
-        serves as an introduction to my portfolio website and journal. I've also
-        included an image of a Jiu-Jitsu white belt. The idea is to update this
-        image as I achieve higher belt rankings – for instance, when I earn my
-        blue belt next year, I'll update the image accordingly. Check out the
-        demonstration of the page's responsiveness below.
-      </p>
-      <img src="imgs/intro-demo.gif" alt="Introduction demo" />
-    </article>
+        <article>
+          <h2>
+            17/04/2023 (Monday) - Building a Responsive Navigation
+          </h2>
+          <p>
+            Today, I started working on a responsive navigation for my website.
+            For screens smaller than 700px wide, I designed a simple yet
+            aesthetic navigation menu with five sections: Home, About, IT Blog,
+            Projects, and Github. These sections are aligned to the left side of
+            the panel. On the right side, I added a moon icon that serves as a
+            toggle button. In the future, this button will enable users to
+            switch the website's color scheme between day and night modes.
+          </p>
+          <p>
+            For larger screens, I created an expanded version of the navigation.
+            My name is displayed at the top of the navigation and will act as a
+            link to the homepage in the future, so I removed the Home section
+            from the menu. The moon icon remains the same but is slightly larger
+            to accommodate the larger screen size.
+          </p>
+          <img src="imgs/nav-demo.gif" alt="Navigation demo" />
+        </article>
+        <article>
+          <h2>
+            18/04/2023 (Tuesday) - Developing the "About Me" Section
+          </h2>
+          <p>
+            Today, I made a progress on my website by creating a responsive
+            "About Me" section that appears right after the navigation panel.
+            This section serves as an introduction to my portfolio website and
+            journal. I've also included an image of a Jiu-Jitsu white belt. The
+            idea is to update this image as I achieve higher belt rankings – for
+            instance, when I earn my blue belt next year, I'll update the image
+            accordingly. Check out the demonstration of the page's
+            responsiveness below.
+          </p>
+          <img src="imgs/intro-demo.gif" alt="Introduction demo" />
+        </article>
 
-    <article>
-      <h2>
-        19/04/2023 (Wednesday) - Building the "Latest Posts" Section
-      </h2>
-      <p>
-        Today, I developed a section dedicated to showcasing my latest journal
-        entries. Each entry in the "Latest Posts" section will display the title
-        and creation date of the corresponding post. For example, the title
-        "Creating the 'Latest Posts' Section" would appear along with its date.
-        I also added a small icon to the left of the date, helping to visually
-        differentiate the types of work or projects I've been involved in on a
-        specific day. In the future, I plan to retrieve this data from an API
-        connected to an AWS database. This way, I won't have to manually update
-        the content on a daily basis, streamlining the process and making it
-        more efficient.
-      </p>
-      <img src="imgs/latests-posts-demo.gif" alt="Latest Posts demo" />
-    </article>
+        <article>
+          <h2>
+            19/04/2023 (Wednesday) - Building the "Latest Posts" Section
+          </h2>
+          <p>
+            Today, I developed a section dedicated to showcasing my latest
+            journal entries. Each entry in the "Latest Posts" section will
+            display the title and creation date of the corresponding post. For
+            example, the title "Creating the 'Latest Posts' Section" would
+            appear along with its date. I also added a small icon to the left of
+            the date, helping to visually differentiate the types of work or
+            projects I've been involved in on a specific day. In the future, I
+            plan to retrieve this data from an API connected to an AWS database.
+            This way, I won't have to manually update the content on a daily
+            basis, streamlining the process and making it more efficient.
+          </p>
+          <img src="imgs/latests-posts-demo.gif" alt="Latest Posts demo" />
+        </article>
 
-    <article>
-      <h2>
-        20/04/2023 (Thursday) - Building the "Projects" Section
-      </h2>
-      <p>
-        Today, my coding time was limited due to work and taking care of my
-        5-year-old niece. However, I managed to create a section that showcases
-        my recent projects throughout my career. Each project will feature its
-        unique creation year, title, a brief description, and two buttons
-        linking to the project's journal entries, detailing my daily progress,
-        and a demo of the project. Below is the final visualization of the
-        section, displaying two containers in a small resolution (optimized for
-        smartphones).
-      </p>
-      <img
-        src="./imgs/projects-small.png"
-        alt="Projects section visualization"
-      />
-    </article>
+        <article>
+          <h2>
+            20/04/2023 (Thursday) - Building the "Projects" Section
+          </h2>
+          <p>
+            Today, my coding time was limited due to work and taking care of my
+            5-year-old niece. However, I managed to create a section that
+            showcases my recent projects throughout my career. Each project will
+            feature its unique creation year, title, a brief description, and
+            two buttons linking to the project's journal entries, detailing my
+            daily progress, and a demo of the project. Below is the final
+            visualization of the section, displaying two containers in a small
+            resolution (optimized for smartphones).
+          </p>
+          <img
+            src="./imgs/projects-small.png"
+            alt="Projects section visualization"
+          />
+        </article>
 
-    <article>
-      <h2>
-        21/04/2023 (Friday) - Adding responsiveness to the Projects section
-      </h2>
-      <p>
-        Today, I successfully added responsiveness to my Projects section. To
-        achieve this, I used 'display: grid' to create three columns of project
-        containers in each row when the screen width reaches 700 px. Now,
-        whenever a new project is added, the section automatically places it in
-        a new row after there are already three projects in the previous row.
-      </p>
-      <img
-        src="./imgs/project-section-responsivness.png"
-        alt="Projects section responsiveness"
-      />
-    </article>
+        <article>
+          <h2>
+            21/04/2023 (Friday) - Adding responsiveness to the Projects section
+          </h2>
+          <p>
+            Today, I successfully added responsiveness to my Projects section.
+            To achieve this, I used 'display: grid' to create three columns of
+            project containers in each row when the screen width reaches 700 px.
+            Now, whenever a new project is added, the section automatically
+            places it in a new row after there are already three projects in the
+            previous row.
+          </p>
+          <img
+            src="./imgs/project-section-responsivness.png"
+            alt="Projects section responsiveness"
+          />
+        </article>
 
-    <article>
-      <h2>
-        22/04/2023 (Saturday) - Wrapping Up the Home Page with a Minimalist
-        Footer
-      </h2>
-      <p>
-        Today, I completed the development of the home page by adding a simple
-        footer. The footer includes my contact information such as LinkedIn,
-        Gmail, phone number, and GitHub. To enhance user experience, I
-        incorporated png images for a more visually engaging interaction with
-        the footer.
-      </p>
-      <img src="./imgs/footer.png" alt="Minimalist footer on the home page" />
-    </article>
+        <article>
+          <h2>
+            22/04/2023 (Saturday) - Wrapping Up the Home Page with a Minimalist
+            Footer
+          </h2>
+          <p>
+            Today, I completed the development of the home page by adding a
+            simple footer. The footer includes my contact information such as
+            LinkedIn, Gmail, phone number, and GitHub. To enhance user
+            experience, I incorporated png images for a more visually engaging
+            interaction with the footer.
+          </p>
+          <img
+            src="./imgs/footer.png"
+            alt="Minimalist footer on the home page"
+          />
+        </article>
 
-    <article>
-      <h2>
-        01/05/2023 (Monday) - Crafting the 'Articles' Section
-      </h2>
-      <p>
-        I haven't posted for the last 8 days, but I've been working on my
-        project every day, making daily commits to GitHub. During this time, I
-        finished my home page, projects page, and about page.
-      </p>
-      <p>
-        I just completed a layout tile that displays information about the
-        ongoing development of the website. I decided to include this since I
-        shared my portfolio website in my contact info on LinkedIn. This way, if
-        an interviewer visits my site, they'll understand that it's still a work
-        in progress, which may help explain any issues or "blank spaces."
-      </p>
-      <img
-        src="./imgs/under-developement.png"
-        alt="Website Under development info"
-      />
-      <p>
-        Now, my focus is on the "Articles" page. I plan to keep this page simple
-        and free of unnecessary information. It will contain all the lessons
-        I'll be teaching myself throughout my career. As the page will feature
-        dozens of articles, I want to keep it organized and tidy. It will be
-        divided by year and include basic article details (title and posting
-        date). The layout will look similar to the picture below:
-      </p>
-      <img
-        src="./imgs/articles-structure.jpg"
-        alt="Articles page layout concept"
-      />
-      <p>
-        The Articles page structure is now complete. Here are the results for
-        both smaller and larger screen resolutions:
-      </p>
-      <img
-        src="./imgs/articles-structure-small.png"
-        alt="Articles structure (small screen)"
-      />
-      <img
-        src="./imgs/articles-structure-big.png"
-        alt="Articles structure (big screen)"
-      />
-    </article>
+        <article>
+          <h2>
+            01/05/2023 (Monday) - Crafting the 'Articles' Section
+          </h2>
+          <p>
+            I haven't posted for the last 8 days, but I've been working on my
+            project every day, making daily commits to GitHub. During this time,
+            I finished my home page, projects page, and about page.
+          </p>
+          <p>
+            I just completed a layout tile that displays information about the
+            ongoing development of the website. I decided to include this since
+            I shared my portfolio website in my contact info on LinkedIn. This
+            way, if an interviewer visits my site, they'll understand that it's
+            still a work in progress, which may help explain any issues or
+            "blank spaces."
+          </p>
+          <img
+            src="./imgs/under-developement.png"
+            alt="Website Under development info"
+          />
+          <p>
+            Now, my focus is on the "Articles" page. I plan to keep this page
+            simple and free of unnecessary information. It will contain all the
+            lessons I'll be teaching myself throughout my career. As the page
+            will feature dozens of articles, I want to keep it organized and
+            tidy. It will be divided by year and include basic article details
+            (title and posting date). The layout will look similar to the
+            picture below:
+          </p>
+          <img
+            src="./imgs/articles-structure.jpg"
+            alt="Articles page layout concept"
+          />
+          <p>
+            The Articles page structure is now complete. Here are the results
+            for both smaller and larger screen resolutions:
+          </p>
+          <img
+            src="./imgs/articles-structure-small.png"
+            alt="Articles structure (small screen)"
+          />
+          <img
+            src="./imgs/articles-structure-big.png"
+            alt="Articles structure (big screen)"
+          />
+        </article>
+        <article>
+          <h1>Creating the "IT Journal" Page (May 2, 2023)</h1>
+
+          <h2>Introduction</h2>
+          <p>
+            Today, I successfully created the final page in the menu called "IT
+            Journal." This page will showcase my development journey and the
+            progress I've made on various projects. By clicking on each tile,
+            its content will be displayed.
+          </p>
+
+          <h2>Tasks Completed</h2>
+          <ul>
+            <li>Finished "IT-Journal" Page</li>
+          </ul>
+
+          <h2>Challenges Faced</h2>
+          <ul>
+            <li>
+              <strong>Challenge 1:</strong>
+              Adding text to the bottom of the tile, ensuring that the text
+              fades away as it approaches the end of the tile.
+            </li>
+          </ul>
+
+          <h2>Learnings</h2>
+          <ul>
+            <li>
+              <strong>Learning 1:</strong>
+              Learned how to create fading text. To create fading text, it's
+              important to:
+              <ul>
+                <li>Set the position: relative on the element.</li>
+                <li>Add ::after property on that element.</li>
+                <li>
+                  Add position absolute, set the fade to the bottom, set the
+                  height (from where the fade will start), and add a background
+                  image (linear gradient that starts from the bottom and goes to
+                  the top).
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <h2>Visuals</h2>
+          <img
+            src="./imgs/it-journal-iphoneXR-vertical.png"
+            alt="IT journal page responsiveness (iPhone XR vertical)"
+          />
+          <img
+            src="./imgs/it-journal-iphoneXR-horizontal.png"
+            alt="IT journal page responsiveness (iPhone XR horizontal)"
+          />
+        </article>
+
+        <article>
+          <h1>
+            Refactoring and Commenting Code for Better Structure (May 3, 2023)
+          </h1>
+          <h2>Introduction</h2>
+          <p>
+            I've reached a point where my code is not well-structured, which
+            makes scaling and adding new pages time-consuming. Any change I make
+            affects the overall website structure. To improve this, I need to
+            add comments to my code and refactor it for better organization.
+            I'll start with the dates on my home page.
+          </p>
+          <h2>Tasks Completed</h2>
+          <ul>
+            <li>
+              Refactored dates by adding the "date-item" class for every element
+              containing a date
+            </li>
+            <li>
+              Created a separate file and placed it in the "general" folder for
+              easier code reuse
+            </li>
+          </ul>
+          <h2>Challenges Faced</h2>
+          <ul>
+            <li>
+              <strong>Challenge 1:</strong>
+              This task wasn't too complicated, but it required identifying all
+              elements with similar properties, removing redundant code, and
+              creating a separate class for reusable code. This process was
+              somewhat time-consuming.
+            </li>
+          </ul>
+          <h2>Learnings</h2>
+          <ul>
+            <li>
+              <strong>Learning 1:</strong>
+              I learned that to create a scalable website, it's crucial to add
+              sufficient comments and as many reusable classes as possible. This
+              not only helps with future expansion but also makes the code more
+              readable.
+            </li>
+          </ul>
+        </article>
+      </main>
+
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- FOOTER -->
+      <footer>
+        <div class="container footer">
+          <p class="made-by">Made by Jakub Mika</p>
+          <p class="questions-feedback">
+            If you have any questions or feedback, feel free to ask.
+          </p>
+          <div class="contact-section">
+            <div class="contact">
+              <p class="contact-data">kuba.mika16@gmail.com</p>
+              <img src="/assets/imgs/gmail.png" alt="" class="contact-logo" />
+            </div>
+            <div class="contact">
+              <a
+                href="https://github.com/kubamika16"
+                target="_blank"
+                class="contact-data"
+              >
+                GitHub
+              </a>
+              <img src="/assets/imgs/github.png" alt="" class="contact-logo" />
+            </div>
+            <div class="contact">
+              <a
+                href="https://www.linkedin.com/in/jakub-mika-a21853174/"
+                class="contact-data"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+              <img
+                src="/assets/imgs/linkedIn.png"
+                alt=""
+                class="contact-logo"
+              />
+            </div>
+            <div class="contact">
+              <p class="contact-data">
+                <a href="tel:+447743564345" class="phone-link">
+                  (+44) 0 7743 564345
+                </a>
+              </p>
+              <img src="/assets/imgs/contact.png" alt="" class="contact-logo" />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

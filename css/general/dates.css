@@ -1,0 +1,19 @@
+/* This is a file that uses the same properties for every date entry on my webpage */
+
+:root {
+  --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
+  --date-color-green: #5eddac;
+  --date-color-pink: #f57ad0;
+  --date-color-grey: grey;
+}
+
+/* ------------------------------------ */
+/* ------------------------------------ */
+/* ------------------------------------ */
+/* TIME PROPERTIES*/
+.date-item {
+  font-family: var(--date-font);
+  font-size: 1rem;
+
+  margin: 0;
+}
