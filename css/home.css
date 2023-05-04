@@ -7,15 +7,8 @@
   --link: #9ca0fa;
 }
 
-h3 {
-  font-size: inherit;
-  font-weight: 500;
-  margin: 0;
-}
-
 .nav-item.home a {
   border-bottom: 3px solid var(--home-color);
-  color: white;
 }
 
 /* ------------------------------------ */
@@ -43,40 +36,31 @@ h3 {
 /* ------------------------------------ */
 /* LATEST POSTS SECTION */
 
-.container-header {
+/* .container-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
-.posts {
+.all-items {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
 .single-post {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-
-  text-decoration: none;
-  color: inherit;
   border-bottom: 0.01px solid rgb(66, 66, 66);
 }
 
-.single-post .right-side {
+.single-post .post-info {
   display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
-.right-side img {
+.post-info img {
   width: 2.5rem;
   border-radius: 50%;
-
-  justify-content: center;
 }
 
 .latest-journal-date {
@@ -89,23 +73,12 @@ h3 {
 /* ----------------------------------------- */
 /* ----------------------------------------- */
 /* ARTICLES SECTION */
-.all-articles {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+
+.single-article-logo img {
+  width: 2rem;
+
+  justify-content: center;
 }
-
-.single-article {
-  display: flex;
-  gap: 1rem;
-
-  align-items: center;
-}
-
-.single-article-left {
-  display: flex;
-}
-
 .single-article-date {
   display: none;
   color: var(--date-color-grey);
@@ -113,13 +86,6 @@ h3 {
 
 .post-title {
   text-decoration: none;
-  color: inherit;
-}
-
-.single-article img {
-  width: 2rem;
-
-  justify-content: center;
 }
 
 /* ----------------------------------------- */
@@ -135,10 +101,6 @@ h3 {
 }
 
 .project {
-  display: flex;
-  flex-direction: column;
-  color: inherit;
-
   padding: 1rem;
 
   border: 1px solid var(--border-slightly-grey);
@@ -151,7 +113,6 @@ h3 {
 }
 
 .project-title {
-  color: inherit;
   font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
@@ -213,6 +174,7 @@ h3 {
   /* ----------------------------------------- */
   /* ----------------------------------------- */
   /* ARTICLES SECTION */
+
   .all-articles {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -247,7 +209,4 @@ h3 {
 }
 
 @media (min-width: 1300px) {
-  .all-articles {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }

@@ -7,7 +7,6 @@ button {
   border-radius: 10%;
   border: 1px solid var(--border-slightly-grey);
   background-color: var(--background-slightly-grey);
-  color: inherit;
 }
 
 button:hover {
