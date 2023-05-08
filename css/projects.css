@@ -16,13 +16,13 @@
 /* ----------------------------------------- */
 /* PROJECTS SECTION */
 
-/* .all-projects {
+.all-projects {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
   font-size: 1rem;
-} */
+}
 
 .project {
   display: flex;
@@ -36,13 +36,13 @@
   border-radius: 0.3rem;
 }
 
-.project-date {
+.single-project-date {
   font-family: var(--date-font);
   color: #f57ad0;
 }
 
 .project-title {
-  color: inherit;
+  color: white;
   font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;

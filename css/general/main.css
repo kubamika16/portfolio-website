@@ -42,7 +42,8 @@ h2,
 h3,
 p,
 a,
-button {
+button,
+span {
   color: white;
 }
 
@@ -92,7 +93,7 @@ button {
   }
 
   main {
-    font-size: 1.25rem;
+    /* font-size: 1.25rem; */
     line-height: 2rem;
   }
 }
