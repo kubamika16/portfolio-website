@@ -117,3 +117,17 @@ article::before {
   color: white;
   border-top: 1px solid white;
 }
+
+/* PROPERTIES FOR SINGLE ARTICLE */
+.single-article-info {
+  /* gap: 0.5rem; */
+}
+
+.single-article-title {
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.single-article-title h1 {
+  font-size: 1.5rem;
+}

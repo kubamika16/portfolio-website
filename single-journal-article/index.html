@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="/css/general/nav.css" />
 
     <!-- CSS file that contains properties for journal page -->
-    <!-- <link rel="stylesheet" href="/css/it-journal.css" /> -->
+    <link rel="stylesheet" href="/css/it-journal.css" />
+
+    <!-- CSS file that contains properties for journal page -->
+    <link rel="stylesheet" href="/css/general/dates.css" />
 
     <!-- CSS file that contains properties for contact footer -->
     <link rel="stylesheet" href="/css/general/footer.css" />
-
-    <link rel="stylesheet" href="css/my-website.css" />
   </head>
   <body>
     <div class="layout">
@@ -54,19 +55,33 @@
       <!-- -------------------- -->
       <!-- MAIN -->
       <main>
-        <div class="container">
-          <div class="container-header">
-            <h1>My website Journal</h1>
-          </div>
-
-          <!-- Container for all items positioned on a website -->
-          <div class="all-items">
-            <!-- Latest Item -->
-            <div class="single-item">
-              <article></article>
+        <div class="container it-journal">
+          <div class="all-journals">
+            <!-- Latest Journal -->
+            <div class="journal single-article">
+              <div class="journal-info single-article-info">
+                <!-- Title of journal -->
+                <a class="journal-title single-article-title" href="">
+                  <h1>HTML CSS Journal</h1>
+                </a>
+                <!-- Date of created journal-->
+                <div class="journal-date">1 May 2023</div>
+              </div>
+              <div class="journal-content"></div>
             </div>
-            <div class="single-item"></div>
-            <div class="single-item"></div>
+
+            <!-- Second Latest Journal -->
+            <div class="journal">
+              <div class="journal-info">
+                <!-- Date of created journal-->
+                <div class="journal-date">1 May 2023</div>
+                <!-- Title of journal -->
+                <a class="journal-title" href="">
+                  <h1>HTML CSS Journal</h1>
+                </a>
+              </div>
+              <div class="journal-content"></div>
+            </div>
           </div>
         </div>
       </main>
@@ -124,58 +139,3 @@
     </div>
   </body>
 </html>
-
-<!--         <article>
-          <h1>Creating the "IT Journal" Page (May 2, 2023)</h1>
-
-          <h2>Introduction</h2>
-          <p>
-            Today, I successfully created the final page in the menu called "IT
-            Journal." This page will showcase my development journey and the
-            progress I've made on various projects. By clicking on each tile,
-            its content will be displayed.
-          </p>
-
-          <h2>Tasks Completed</h2>
-          <ul>
-            <li>Finished "IT-Journal" Page</li>
-          </ul>
-
-          <h2>Challenges Faced</h2>
-          <ul>
-            <li>
-              <strong>Challenge 1:</strong>
-              Adding text to the bottom of the tile, ensuring that the text
-              fades away as it approaches the end of the tile.
-            </li>
-          </ul>
-
-          <h2>Learnings</h2>
-          <ul>
-            <li>
-              <strong>Learning 1:</strong>
-              Learned how to create fading text. To create fading text, it's
-              important to:
-              <ul>
-                <li>Set the position: relative on the element.</li>
-                <li>Add ::after property on that element.</li>
-                <li>
-                  Add position absolute, set the fade to the bottom, set the
-                  height (from where the fade will start), and add a background
-                  image (linear gradient that starts from the bottom and goes to
-                  the top).
-                </li>
-              </ul>
-            </li>
-          </ul>
-
-          <h2>Visuals</h2>
-          <img
-            src="./imgs/it-journal-iphoneXR-vertical.png"
-            alt="IT journal page responsiveness (iPhone XR vertical)"
-          />
-          <img
-            src="./imgs/it-journal-iphoneXR-horizontal.png"
-            alt="IT journal page responsiveness (iPhone XR horizontal)"
-          />
-        </article> -->
