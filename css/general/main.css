@@ -43,7 +43,9 @@ h3,
 p,
 a,
 button,
-span {
+span,
+ul,
+.contact a {
   color: white;
 }
 

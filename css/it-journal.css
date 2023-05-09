@@ -32,23 +32,14 @@
   background-color: var(--background-slightly-grey);
   border-radius: 1rem;
 
-  height: 70vh;
+  min-height: 70vh;
 
   display: flex;
   flex-direction: column;
   gap: 2rem;
   box-sizing: border-box;
 
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 0;
-}
-
-.journal-content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  padding: 1.5rem 1rem;
 }
 
 .journal-date {
@@ -60,6 +51,8 @@
 .fading-text {
   overflow: hidden;
   position: relative;
+
+  height: 70vh;
 }
 
 .fading-text::after {
@@ -82,6 +75,10 @@
   margin: 0;
 }
 
+a {
+  color: rgb(97, 0, 97);
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -92,8 +89,8 @@ a:hover {
 }
 
 .journal-content p {
-  font-size: 0.8rem;
-  line-height: 1.3rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   margin-bottom: 0;
 }
 
@@ -118,16 +115,44 @@ article::before {
   border-top: 1px solid white;
 }
 
-/* PROPERTIES FOR SINGLE ARTICLE */
-.single-article-info {
-  /* gap: 0.5rem; */
-}
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* ----------------------------------------- */
+/* IT JOURNAL SECTION TILES (FOR EXAMPLE INSIDE my-website journal) */
+/* PROPERTIES FOR SINGLE JOURNAL */
 
-.single-article-title {
+.single-journal-title {
   text-decoration: none;
   pointer-events: none;
+
+  text-align: center;
 }
 
-.single-article-title h1 {
+.single-journal-title h1 {
   font-size: 1.5rem;
+}
+
+.journal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
+  /* Instead of using gap property, I use flex-grow so that divs inside a one big div are distributed with exact amount of gap */
+  flex-grow: 1;
+}
+
+.journal-tile {
+  background-color: rgb(41, 41, 41);
+  border: 1px solid var(--border-slightly-grey);
+  border-radius: 5px;
+
+  padding: 0.5rem 1rem;
+}
+.journal-tile h3:hover {
+  text-decoration: none;
+}
+
+.section-content {
+  font-size: 1rem;
 }
