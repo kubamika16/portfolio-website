@@ -74,6 +74,11 @@
 /* ----------------------------------------- */
 /* ARTICLES SECTION */
 
+.single-article-logo {
+  display: flex;
+  justify-content: center;
+}
+
 .single-article-logo img {
   width: 2rem;
 
@@ -193,7 +198,7 @@
   }
 
   .single-article img {
-    width: 2.5rem;
+    width: 3rem;
   }
 
   /* ----------------------------------------- */
