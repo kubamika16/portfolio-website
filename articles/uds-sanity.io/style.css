@@ -4,10 +4,20 @@
 }
 
 .article-content h2 {
-  margin-top: 4rem;
+  margin-top: 3rem;
   font-weight: 400;
 }
 
 .article-content p {
   font-size: 1rem;
+}
+
+@media (min-width: 700px) {
+  .article-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .article-content p {
+    font-size: 1.2rem;
+  }
 }
