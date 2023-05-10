@@ -1,0 +1,13 @@
+.container-header h1 {
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.article-content h2 {
+  margin-top: 4rem;
+  font-weight: 400;
+}
+
+.article-content p {
+  font-size: 1rem;
+}

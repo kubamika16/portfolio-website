@@ -45,7 +45,8 @@ a,
 button,
 span,
 ul,
-.contact a {
+.contact a,
+div {
   color: white;
 }
 
