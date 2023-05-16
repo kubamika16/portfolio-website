@@ -119,25 +119,73 @@
 
             <h2>Getting Started with Sanity.io:</h2>
             <p>
-              We go to website and click 'get started'. After creating the
-              account the line of code shows up. The code helps to download
-              sanity.io in our local enviorement (I use iOS)
+              To begin using Sanity.io, visit their website and click 'Get
+              Started'. After creating an account, you'll be provided with a
+              line of code that helps you download Sanity.io in your local
+              environment (for this example, we're using macOS).
             </p>
             <p>
-              npm create sanity@latest -- --template get-started --dataset
-              production --provider google
+              Run the following command in your terminal:
+            </p>
+            <pre>
+              npm create sanity@latest
+            </pre>
+            <p>
+              The command line will prompt you to log in using Google, GitHub,
+              or email. In this case, we'll choose GitHub.
             </p>
             <p>
-              Command line will ask us the option to log in (Google, Github or
-              e-mail). I chose Github in this case.
+              Next, you'll need to enter some metadata for your project. For
+              this example, let's call the project 'blog'. Type 'y' (yes) for
+              the default dataset configuration. Then, choose the path for your
+              project. Afterward, open the project in your code editor (we'll
+              use Visual Studio Code for this example).
             </p>
+            <img src="imgs/1.png" alt="Project setup in VS Code" />
             <p>
-              After that we have to put some metadata into the project. For
-              article purposes my project will be called 'blog'. Then y (yes)
-              for default dataset configuration. Then we have to choose path for
-              our project. Then we go to code program (I use VS Code) to open
-              the project.
+              Now, navigate to your project folder in Visual Studio Code, and
+              run the following command in the terminal:
             </p>
+            <pre>
+              npm run dev
+            </pre>
+            <p>
+              This command starts a local development server at localhost:3333.
+              Open your browser and navigate to localhost:3333 to access the
+              Sanity local development environment. Here, you can easily add
+              content to your blog posts.
+            </p>
+            <img
+              src="imgs/2.png"
+              alt="Sanity.io local development environment"
+            />
+
+            <h2>Fetching that data using Javascript and AWS</h2>
+            <ol>
+              <li>
+                Set up AWS CLI: Install the AWS Command Line Interface (CLI) on
+                your computer by following the instructions at
+                https://aws.amazon.com/cli/. Configure the AWS CLI with your AWS
+                credentials using aws configure.
+              </li>
+              <li>
+                Create a new folder: Create a new folder on your computer to
+                store the Lambda function files.
+              </li>
+              <li>
+                Write the Lambda function: Create a new file named index.js in
+                the new folder and add the following code, replacing
+                your_project_id, your_dataset, and your_api_version with the
+                appropriate values:
+              </li>
+              <img src="imgs/3.png" alt="" />
+              <li>
+                Install dependencies: In the same folder as your index.js file,
+                run the following command to install the Sanity client library:
+              </li>
+              <pre>npm init -y</pre>
+              <pre>npm install @sanity/client</pre>
+            </ol>
           </div>
         </div>
       </main>
