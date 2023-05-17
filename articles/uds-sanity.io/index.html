@@ -182,6 +182,58 @@
               <pre>npm init -y</pre>
               <br />
               <pre>npm install @sanity/client</pre>
+
+              <li>
+                Create a .zip file: Select all the files in the folder,
+                right-click, and choose the option to create a new zip archive
+                (e.g., "Compress" on macOS or "Send to > Compressed (zipped)
+                folder" on Windows).
+              </li>
+              <li>
+                Create an AWS Lambda function: In the AWS Management Console,
+                navigate to the Lambda service. Click "Create function" and
+                choose "Author from scratch." Enter a name for your function,
+                and choose the "Node.js" runtime that corresponds to the version
+                of Node.js you are using. Under "Function code," choose "Upload
+                a .zip file" and select the zip file you created in step 6.
+                Click "Create function."
+              </li>
+              <li>
+                Configure Lambda function: In the "Function code" section of
+                your Lambda function, set the "Handler" field to index.handler.
+              </li>
+              <li>
+                Create an API Gateway: In the AWS Management Console, navigate
+                to the API Gateway service. Click "Create API," choose "REST
+                API," and click "Build." Choose "New API" and enter a name and
+                description for your API. Click "Create API."
+              </li>
+              <li>
+                Create a resource and method: In your API, click "Actions" and
+                choose "Create Resource." Enter a name for the resource and
+                click "Create Resource." Click "Actions" again, choose "Create
+                Method," and select "GET." In the "GET" setup pane, choose
+                "Lambda Function" for the "Integration type," select the "Use
+                Lambda Proxy integration" checkbox, and enter the name of the
+                Lambda function you created in step 7. Click "Save."
+              </li>
+              <li>
+                Enable CORS: In your API, click "Actions" and choose "Enable
+                CORS." Click "Enable CORS and replace existing CORS headers" in
+                the dialog that appears. Click "Yes, replace existing values."
+              </li>
+              <li>
+                Deploy API: In your API, click "Actions" and choose "Deploy
+                API." Choose "[New Stage]" from the "Deployment stage" dropdown,
+                enter a name for the new stage (e.g., "prod"), and click
+                "Deploy." You will now see an "Invoke URL" at the top of the
+                page.
+              </li>
+              <li>
+                Use the API endpoint in your static site: Replace API_ENDPOINT
+                with the "Invoke URL" from step 12 in the following code, and
+                include it in your static site's JavaScript file:
+              </li>
             </ol>
           </div>
         </div>
