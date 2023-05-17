@@ -5,14 +5,27 @@
 
 .article-content h2 {
   margin-top: 3rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .article-content p {
   font-size: 1rem;
 }
 
+img {
+  width: 70%;
+}
+
+pre {
+  display: inline;
+  margin-left: 0;
+}
+
 @media (min-width: 700px) {
+  .article-content {
+    max-width: 800px;
+  }
+
   .article-content h2 {
     font-size: 1.8rem;
   }
