@@ -17,8 +17,8 @@ if (timeElapsed < fiveMinutesInMilliseconds) {
   document.querySelector('.overlay').style.display = 'flex'
 }
 
-let PROJECT_ID = 'x18ixioq'
-let DATASET = 'production'
+const PROJECT_ID = 'x18ixioq'
+const DATASET = 'production'
 let QUERY = encodeURIComponent('*[_type == "post"]')
 
 let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
