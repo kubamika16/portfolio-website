@@ -10,6 +10,11 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+    defineField({
+      name: 'folder',
+      title: 'Folder Name',
+      type: 'string',
+    }),
     // defineField({
     //   name: 'slug',
     //   title: 'Slug',

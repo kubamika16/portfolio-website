@@ -36,6 +36,7 @@ fetchData(PROJECT_URL)
   .then((data) =>
     data.result.forEach((post) => {
       console.log(post)
+
       // Create new div for each post
       let postDiv = document.createElement('div')
       postDiv.classList.add('single-item', 'single-article')
@@ -64,7 +65,7 @@ fetchData(PROJECT_URL)
          <p class="date-item single-article-date">${new Date(
            post.publishedAt,
          ).toDateString()}</p>
-         <a href="/articles/${post._id}/index.html" class="post-title">
+         <a href="/articles/${post.folder}/index.html" class="post-title">
            <h3>${post.title}</h3>
          </a>
        </div>
