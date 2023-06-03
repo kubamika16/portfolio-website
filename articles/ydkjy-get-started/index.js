@@ -17,62 +17,34 @@ let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${
 // Fetching actual data from Sanity.io
 fetchData(PROJECT_URL)
   .then((data) => {
-    const result = data.result[0].body
+    const body = data.result[0].body
+    console.log(body)
 
-    let currentList = null // To hold the current ul/li we're appending to
+    function formatBody(body) {
+      let formattedText = ''
 
-    result.forEach((block) => {
-      let contentElement
-
-      switch (block._type) {
-        case 'block':
-          if (block.listItem) {
-            const listItemElement = document.createElement('li')
-            listItemElement.textContent = block.children[0].text
-
-            // If we already have a list we're adding to, append the new item.
-            // Otherwise, create a new list.
-            if (currentList) {
-              currentList.appendChild(listItemElement)
-            } else {
-              currentList = document.createElement('ol')
-              currentList.appendChild(listItemElement)
+      for (let block of body) {
+        switch (block._type) {
+          case 'block':
+            if (block.style === 'h2') {
+              formattedText += `<h2>${block.children[0].text}</h2>`
+            } else if (block.style === 'normal') {
+              if (block.listItem === 'number') {
+                formattedText += `<li>${block.children[0].text}</li>`
+              } else {
+                formattedText += `<p>${block.children[0].text}</p>`
+              }
             }
-          } else {
-            // If we reach a non-list block and there's a list in progress, add it to the document and clear our currentList
-            if (currentList) {
-              document
-                .querySelector('.container.articles')
-                .appendChild(currentList)
-              currentList = null // Reset the list
-            }
+            break
 
-            // Depending on the style, create different types of elements
-            if (block.style.startsWith('h')) {
-              contentElement = document.createElement(block.style)
-            } else {
-              contentElement = document.createElement('p')
-            }
-
-            contentElement.textContent = block.children[0].text
-            contentElement.classList.add('article-content')
-            document
-              .querySelector('.container.articles')
-              .appendChild(contentElement)
-          }
-          break
-
-        // ... handle other types of blocks as needed ...
-
-        default:
-          // Skip blocks with types we're not handling
-          break
+          // handle other _type values here...
+        }
       }
-    })
 
-    // After the loop, if there's still a list in progress, add it to the document
-    if (currentList) {
-      document.querySelector('.container.articles').appendChild(currentList)
+      return formattedText
     }
+
+    let formattedText = formatBody(body) // assuming `body` is your data
+    document.querySelector('.container.articles').innerHTML = formattedText
   })
   .catch((error) => console.error('Error:', error))
