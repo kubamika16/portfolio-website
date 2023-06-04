@@ -45,6 +45,6 @@ fetchData(PROJECT_URL)
     }
 
     let formattedText = formatBody(body) // assuming `body` is your data
-    document.querySelector('.container.articles').innerHTML = formattedText
+    document.querySelector('.article-content').innerHTML = formattedText
   })
   .catch((error) => console.error('Error:', error))

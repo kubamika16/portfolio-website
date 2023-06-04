@@ -23,7 +23,7 @@ pre {
 
 @media (min-width: 700px) {
   .article-content {
-    max-width: 800px;
+    max-width: 700px;
   }
 
   .article-content h2 {
@@ -32,5 +32,6 @@ pre {
 
   .article-content p {
     font-size: 1.2rem;
+    margin-bottom: 0;
   }
 }
