@@ -8,6 +8,10 @@
   font-weight: 600;
 }
 
+.article-content h4 {
+  margin-bottom: 0;
+}
+
 .article-content p {
   font-size: 1rem;
 }

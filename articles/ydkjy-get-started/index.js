@@ -24,16 +24,35 @@ fetchData(PROJECT_URL)
       let formattedText = ''
 
       for (let block of body) {
+        let textContent = ''
+
+        // Process each child span of the block
+        block.children.forEach((child) => {
+          if (child.marks.includes('strong')) {
+            // Handle strong marked text
+            textContent += `<strong>${child.text}</strong>`
+          } else {
+            // Handle normal text
+            textContent += child.text
+          }
+        })
+
         switch (block._type) {
           case 'block':
-            if (block.style === 'h2') {
-              formattedText += `<h2>${block.children[0].text}</h2>`
-            } else if (block.style === 'normal') {
-              if (block.listItem === 'number') {
-                formattedText += `<li>${block.children[0].text}</li>`
-              } else {
-                formattedText += `<p>${block.children[0].text}</p>`
-              }
+            switch (block.style) {
+              case 'h2':
+                formattedText += `<h2>${textContent}</h2>`
+                break
+              case 'h4':
+                formattedText += `<h4>${textContent}</h4>`
+                break
+              case 'normal':
+                if (block.listItem === 'number') {
+                  formattedText += `<li>${textContent}</li>`
+                } else {
+                  formattedText += `<p>${textContent}</p>`
+                }
+                break
             }
             break
 
