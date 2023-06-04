@@ -1,18 +1,11 @@
 // Imported functions
-import { fetchData } from '../../functions.js'
-
-// data with identifications to connect with Sanity.io
-let PROJECT_ID = 'x18ixioq'
-let DATASET = 'production'
-let folderName = 'ydkjy-get-started'
-
-// Taking data from Sanity.io where article is equal to one that has folder named "ydkjy-get-started"
-let QUERY = encodeURIComponent(
-  `*[_type == "post" && folder == "${folderName}"]`,
-)
-
-// That wariable helps to fetch certain dana from Sanity.io
-let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
+import {
+  fetchData,
+  formatTextFromChildren,
+  wrapTextWithTag,
+  blockStyleToHtmlTag,
+  PROJECT_URL,
+} from '../../functions.js'
 
 // Fetching actual data from Sanity.io
 fetchData(PROJECT_URL)
@@ -20,47 +13,25 @@ fetchData(PROJECT_URL)
     const body = data.result[0].body
     console.log(body)
 
+    // In this function, for each block in the body, we first format the text from the children array. Then we check if the block type is 'block' and if its style corresponds to a known HTML tag. If these conditions are met, and if it's a list item with 'normal' style, we wrap the text content with the <li> tag. If it's not a list item, we wrap the text content with the HTML tag that corresponds to the block's style. If the block type is not 'block', or if its style doesn't correspond to a known HTML tag, we simply return an empty string. Finally, we join all the formatted block strings into a single HTML string and return it.
     function formatBody(body) {
-      let formattedText = ''
+      return body
+        .map((block) => {
+          let textContent = formatTextFromChildren(block.children)
 
-      for (let block of body) {
-        let textContent = ''
-
-        // Process each child span of the block
-        block.children.forEach((child) => {
-          if (child.marks.includes('strong')) {
-            // Handle strong marked text
-            textContent += `<strong>${child.text}</strong>`
-          } else {
-            // Handle normal text
-            textContent += child.text
-          }
-        })
-
-        switch (block._type) {
-          case 'block':
-            switch (block.style) {
-              case 'h2':
-                formattedText += `<h2>${textContent}</h2>`
-                break
-              case 'h4':
-                formattedText += `<h4>${textContent}</h4>`
-                break
-              case 'normal':
-                if (block.listItem === 'number') {
-                  formattedText += `<li>${textContent}</li>`
-                } else {
-                  formattedText += `<p>${textContent}</p>`
-                }
-                break
+          if (block._type === 'block' && blockStyleToHtmlTag[block.style]) {
+            if (block.listItem === 'number' && block.style === 'normal') {
+              return wrapTextWithTag(textContent, 'li')
             }
-            break
+            return wrapTextWithTag(
+              textContent,
+              blockStyleToHtmlTag[block.style],
+            )
+          }
 
-          // handle other _type values here...
-        }
-      }
-
-      return formattedText
+          return ''
+        })
+        .join('')
     }
 
     let formattedText = formatBody(body) // assuming `body` is your data
