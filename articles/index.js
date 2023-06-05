@@ -1,31 +1,37 @@
-import { fetchData } from '../functions.js'
+import { fetchData, dateFormatter, PROJECT_ID, DATASET } from '../functions.js'
 
-const PROJECT_ID = 'x18ixioq'
-const DATASET = 'production'
+// Sanity.io
 let QUERY = encodeURIComponent('*[_type == "post"]')
-
 let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
+
+const allArticles = document.querySelector('.year-section')
 
 fetchData(PROJECT_URL)
   .then((data) => {
     const body = data.result
     console.log(body)
+
+    data.result.forEach((article) => {
+      console.log(article)
+      const articleTitle = article.title
+      const articlePublishedDate = article.publishedAt
+      const articleFolder = article.folder
+
+      const articleDiv = `<div class="article">
+      <a
+        class="article-name"
+        href="/articles/${articleFolder}/index.html"
+      >
+        ${articleTitle}
+      </a>
+      <p class="article-date">
+        <time>${dateFormatter.formatDate(articlePublishedDate)}</time>
+      </p>
+      </div>`
+
+      allArticles.innerHTML += articleDiv
+    })
   })
   .catch((error) => console.error('Error:', error))
 
-const allArticles = document.querySelector('.year-section')
-console.log(allArticles)
-
-const newOne = `<div class="article">
-<a
-  class="article-name"
-  href="/articles/uds-sanity.io/index.html"
->
-  Understanding Sanity.io
-</a>
-<p class="article-date">
-  <time datetime="2023-05-05">May 5</time>
-</p>
-</div>`
-
-allArticles.innerHTML += newOne
+console.log('Witaj')

@@ -1,3 +1,22 @@
+const dateFormatter = {
+  // The formatDate function takes a date string as input.
+  formatDate(dateString, { includeYear = false } = {}) {
+    // The Date object is created from the provided date string.
+    const date = new Date(dateString)
+    let options = { month: 'long', day: 'numeric' }
+
+    if (includeYear) {
+      options.year = 'numeric'
+    }
+
+    // The Intl.DateTimeFormat object is created with specified options.
+    // The 'en-US' locale is used, and the format is set to display the full name of the month and the numeric day.
+    // This way, the date will be formatted as per the standard in United States.
+    const formatter = new Intl.DateTimeFormat('en-US', options)
+    return formatter.format(date)
+  },
+}
+
 // Fetching data
 const fetchData = async function (url) {
   try {
@@ -73,4 +92,5 @@ export {
   DATASET,
   folderName,
   PROJECT_URL,
+  dateFormatter,
 }

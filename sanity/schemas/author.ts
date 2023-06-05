@@ -40,6 +40,19 @@ export default defineType({
         },
       ],
     }),
+    defineField({
+      name: 'aboutMe',
+      title: 'About Me',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          styles: [{title: 'Normal', value: 'normal'}],
+          lists: [],
+        },
+      ],
+    }),
   ],
   preview: {
     select: {
