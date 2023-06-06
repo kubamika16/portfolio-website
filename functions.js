@@ -58,6 +58,11 @@ let QUERY = encodeURIComponent(
 // That wariable helps to fetch certain dana from Sanity.io
 let PROJECT_URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`
 
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+// SANITY.IO TEXT FORMAT
+
 // This function goes through each child in the children array and checks if it has the mark 'strong'. If it does, it wraps the text in a <strong> HTML tag. If not, it just takes the text as it is. Finally, it joins all these individual texts into a single string and returns it.
 function formatTextFromChildren(children) {
   return children
@@ -82,6 +87,24 @@ const blockStyleToHtmlTag = {
   normal: 'p',
 }
 
+// In this function, for each block in the body, we first format the text from the children array. Then we check if the block type is 'block' and if its style corresponds to a known HTML tag. If these conditions are met, and if it's a list item with 'normal' style, we wrap the text content with the <li> tag. If it's not a list item, we wrap the text content with the HTML tag that corresponds to the block's style. If the block type is not 'block', or if its style doesn't correspond to a known HTML tag, we simply return an empty string. Finally, we join all the formatted block strings into a single HTML string and return it.
+function formatSanityBody(body) {
+  return body
+    .map((block) => {
+      let textContent = formatTextFromChildren(block.children)
+
+      if (block._type === 'block' && blockStyleToHtmlTag[block.style]) {
+        if (block.listItem === 'number' && block.style === 'normal') {
+          return wrapTextWithTag(textContent, 'li')
+        }
+        return wrapTextWithTag(textContent, blockStyleToHtmlTag[block.style])
+      }
+
+      return ''
+    })
+    .join('')
+}
+
 export {
   fetchData,
   sanityImageUrl,
@@ -93,4 +116,5 @@ export {
   folderName,
   PROJECT_URL,
   dateFormatter,
+  formatSanityBody,
 }
