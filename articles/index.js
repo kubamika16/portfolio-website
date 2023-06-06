@@ -1,4 +1,9 @@
-import { fetchData, dateFormatter, PROJECT_ID, DATASET } from '../functions.js'
+import {
+  fetchData,
+  PROJECT_ID,
+  DATASET,
+  ISODateDescructureFunction,
+} from '../functions.js'
 
 // Sanity.io
 let QUERY = encodeURIComponent('*[_type == "post"]')
@@ -14,7 +19,11 @@ fetchData(PROJECT_URL)
     data.result.forEach((article) => {
       console.log(article)
       const articleTitle = article.title
-      const articlePublishedDate = article.publishedAt
+      const articlePublishedDate = ISODateDescructureFunction(
+        article.publishedAt,
+      )
+      console.log(articlePublishedDate)
+
       const articleFolder = article.folder
 
       const articleDiv = `<div class="article">
@@ -25,7 +34,7 @@ fetchData(PROJECT_URL)
         ${articleTitle}
       </a>
       <p class="article-date">
-        <time>${dateFormatter.formatDate(articlePublishedDate)}</time>
+        <time>${articlePublishedDate.month} ${articlePublishedDate.day}</time>
       </p>
       </div>`
 

@@ -1,20 +1,27 @@
-const dateFormatter = {
-  // The formatDate function takes a date string as input.
-  formatDate(dateString, { includeYear = false } = {}) {
-    // The Date object is created from the provided date string.
-    const date = new Date(dateString)
-    let options = { month: 'long', day: 'numeric' }
+// const dateFormatter = {
+//   // The formatDate function takes a date string as input.
+//   formatDate(dateString, { includeYear = false } = {}) {
+//     // The Date object is created from the provided date string.
+//     const date = new Date(dateString)
+//     let options = { month: 'long', day: 'numeric' }
 
-    if (includeYear) {
-      options.year = 'numeric'
-    }
+//     if (includeYear) {
+//       options.year = 'numeric'
+//     }
 
-    // The Intl.DateTimeFormat object is created with specified options.
-    // The 'en-US' locale is used, and the format is set to display the full name of the month and the numeric day.
-    // This way, the date will be formatted as per the standard in United States.
-    const formatter = new Intl.DateTimeFormat('en-US', options)
-    return formatter.format(date)
-  },
+//     // The Intl.DateTimeFormat object is created with specified options.
+//     // The 'en-US' locale is used, and the format is set to display the full name of the month and the numeric day.
+//     // This way, the date will be formatted as per the standard in United States.
+//     const formatter = new Intl.DateTimeFormat('en-US', options)
+//     return formatter.format(date)
+//   },
+// }
+
+const ISODateDescructureFunction = function (ISODate) {
+  const [weekday, month, day, year] = new Date(ISODate)
+    .toDateString()
+    .split(' ')
+  return { weekday, month, day, year }
 }
 
 // Fetching data
@@ -115,6 +122,7 @@ export {
   DATASET,
   folderName,
   PROJECT_URL,
-  dateFormatter,
+  // dateFormatter,
   formatSanityBody,
+  ISODateDescructureFunction,
 }
