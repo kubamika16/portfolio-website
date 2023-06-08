@@ -149,10 +149,20 @@ article::before {
 
   padding: 0.5rem 1rem;
 }
+
+.tile-section {
+  margin-bottom: 0.5rem;
+}
+
+.journal-tile p {
+  margin-top: 0.1rem;
+}
+
 .journal-tile h3:hover {
   text-decoration: none;
 }
 
 .section-content {
+  margin-top: 0;
   font-size: 1rem;
 }

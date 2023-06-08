@@ -21,6 +21,7 @@ fetchData(PROJECT_URL)
     console.log(body)
 
     let formattedText = formatSanityBody(body)
+    console.log(formattedText)
     document.querySelector('.article-content').innerHTML = formattedText
   })
   .catch((error) => console.error('Error:', error))
