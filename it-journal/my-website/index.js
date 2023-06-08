@@ -22,37 +22,42 @@ const allJournals = document.querySelector('.all-journals')
 fetchData(projectUrl)
   .then((data) => {
     // The data from Sanity is now available and stored in itJournalData
-    const itJournalData = data.result
+    // const itJournalData = data.result
+    // The optional chaining will return undefined if the property doesn't exist, and the nullish coalescing will provide a default value ([] in this case) if the left side is undefined or null.
+    const itJournalData = data?.result ?? []
 
     // Process the returned data:
     // 1. For each journal entry, filter its tasks based on the specified project folder name
     // 2. If there are any tasks for the specific project, create a new object containing the journal date and these tasks
     // 3. Remove any undefined items from the array (these represent journal entries without tasks for the specific project)
+
+    // const filteredData = itJournalData
+    //   .map((journal) => {
+    //     const filteredTasks = journal.tasks.filter(
+    //       (task) => task.projectFolderName === folderName,
+    //     )
+    //     if (filteredTasks.length !== 0)
+    //       return { journalDate: journal.journalDate, tasks: filteredTasks }
+    //   })
+    //   .filter((item) => item !== undefined)
+
     const filteredData = itJournalData
       .map((journal) => {
-        const filteredTasks = journal.tasks.filter(
-          (task) => task.projectFolderName === folderName,
-        )
+        const filteredTasks =
+          journal?.tasks?.filter(
+            (task) => task.projectFolderName === folderName,
+          ) ?? []
+
         if (filteredTasks.length !== 0)
           return { journalDate: journal.journalDate, tasks: filteredTasks }
       })
-      .filter((item) => item !== undefined)
-
-    // Output the processed data to the console
-    // console.log(filteredData)
+      .filter(Boolean)
 
     // Time for implementing that Sanity.io fetch data inside my website
     filteredData.forEach((dateItem) => {
-      // I have to define task.notes
-      console.log(dateItem)
-      let notesHTML
-      dateItem.tasks.forEach((singleTask) => {
-        console.log(singleTask.notes)
-        notesHTML = formatSanityBody(singleTask.notes)
-      })
-
       const tasksHTML = dateItem.tasks
         .map((task) => {
+          const notesHTML = formatSanityBody(task.notes)
           return `
               <div class="journal-content">
                 <div class="journal-tile">
