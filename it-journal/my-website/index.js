@@ -43,6 +43,8 @@ fetchData(projectUrl)
 
     const filteredData = itJournalData
       .map((journal) => {
+        console.log(journal)
+
         const filteredTasks =
           journal?.tasks?.filter(
             (task) => task.projectFolderName === folderName,
@@ -58,6 +60,7 @@ fetchData(projectUrl)
       const tasksHTML = dateItem.tasks
         .map((task) => {
           const notesHTML = formatSanityBody(task.notes)
+
           return `
               <div class="journal-content">
                 <div class="journal-tile">

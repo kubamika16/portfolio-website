@@ -1,4 +1,5 @@
 import {defineField, defineType} from 'sanity'
+import {codeInput} from '@sanity/code-input'
 
 const task = {
   name: 'task',
@@ -50,6 +51,20 @@ export default defineType({
       title: 'Tasks',
       type: 'array',
       of: [task],
+    }),
+    defineField({
+      type: 'code',
+      name: 'myCodeField',
+      title: 'Code with all options',
+      options: {
+        language: 'javascript',
+        languageAlternatives: [
+          {title: 'Javascript', value: 'javascript'},
+          {title: 'HTML', value: 'html'},
+          {title: 'CSS', value: 'css'},
+        ],
+        withFilename: true,
+      },
     }),
   ],
 

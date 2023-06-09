@@ -68,6 +68,9 @@ function formatTextFromChildren(children) {
       if (child.marks.includes('strong')) {
         return `<strong>${child.text}</strong>`
       }
+      if (child.marks.includes('code')) {
+        return `<pre><code class="language-js">${child.text}</code></pre>`
+      }
       return child.text
     })
     .join('')
