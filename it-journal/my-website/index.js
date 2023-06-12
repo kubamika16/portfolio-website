@@ -25,6 +25,7 @@ fetchData(projectUrl)
     // const itJournalData = data.result
     // The optional chaining will return undefined if the property doesn't exist, and the nullish coalescing will provide a default value ([] in this case) if the left side is undefined or null.
     const itJournalData = data?.result ?? []
+    console.log(itJournalData)
 
     // Process the returned data:
     // 1. For each journal entry, filter its tasks based on the specified project folder name
