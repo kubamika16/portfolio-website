@@ -15,6 +15,9 @@ const task = {
       name: 'projectFolderName',
       title: 'Project Folder Name',
       type: 'string',
+      options: {
+        list: [{title: 'My Website', value: 'my-website'}],
+      },
     }),
     defineField({
       name: 'introduction',
