@@ -27,21 +27,11 @@ fetchData(projectUrl)
     const itJournalData = data?.result ?? []
     console.log(itJournalData)
 
+    // I want to filter notes that were created only for specific project. There might be a day when I edit 2 projects. On certain webpage I want only notes for certain project. Otherways there would be multiple notes from multiple projects
     // Process the returned data:
     // 1. For each journal entry, filter its tasks based on the specified project folder name
     // 2. If there are any tasks for the specific project, create a new object containing the journal date and these tasks
     // 3. Remove any undefined items from the array (these represent journal entries without tasks for the specific project)
-
-    // const filteredData = itJournalData
-    //   .map((journal) => {
-    //     const filteredTasks = journal.tasks.filter(
-    //       (task) => task.projectFolderName === folderName,
-    //     )
-    //     if (filteredTasks.length !== 0)
-    //       return { journalDate: journal.journalDate, tasks: filteredTasks }
-    //   })
-    //   .filter((item) => item !== undefined)
-
     const filteredData = itJournalData
       .map((journal) => {
         console.log(journal)
@@ -54,7 +44,14 @@ fetchData(projectUrl)
         if (filteredTasks.length !== 0)
           return { journalDate: journal.journalDate, tasks: filteredTasks }
       })
+      // That filter deletes undefined values from an array
       .filter(Boolean)
+    console.log('Filtered Data', filteredData)
+
+    // Algorithm that helps to sort filtered journals from the newest to the oldest
+    filteredData.sort(
+      (a, b) => new Date(b.journalDate) - new Date(a.journalDate),
+    )
 
     // Time for implementing that Sanity.io fetch data inside my website
     filteredData.forEach((dateItem) => {

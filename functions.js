@@ -97,13 +97,13 @@ function formatSanityBody(body) {
         let textContent = formatTextFromChildren(block.children)
 
         if (blockStyleToHtmlTag[block.style]) {
-          if (block.listItem === 'number' && block.style === 'normal') {
+          if (block.listItem === 'bullet' && block.style === 'normal') {
             return wrapTextWithTag(textContent, 'li')
           }
           return wrapTextWithTag(textContent, blockStyleToHtmlTag[block.style])
         }
       } else if (block._type === 'code') {
-        return `<pre><code class="language-js">${block.code}</code></pre>`
+        return `<pre><code>${block.code}</code></pre>`
       }
 
       return ''
