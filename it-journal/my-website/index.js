@@ -54,7 +54,7 @@ fetchData(projectUrl)
     )
 
     // Time for implementing that Sanity.io fetch data inside my website
-    filteredData.forEach((dateItem) => {
+    filteredData.forEach((dateItem, index) => {
       const tasksHTML = dateItem.tasks
         .map((task) => {
           const notesHTML = formatSanityBody(task.notes)
