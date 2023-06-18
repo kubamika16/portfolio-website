@@ -27,19 +27,21 @@
   align-items: center;
 }
 
+.journal-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
 .journal {
   border: 1px solid var(--border-slightly-grey);
   background-color: var(--background-slightly-grey);
   border-radius: 1rem;
-
   max-height: 70vh;
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
   box-sizing: border-box;
-
   padding: 1.5rem 1rem;
 }
 

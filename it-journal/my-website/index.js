@@ -80,15 +80,18 @@ fetchData(projectUrl)
         .join('')
 
       const journalDiv = `
-    <div class="journal single-journal">
-      <div class="journal-info single-journal-info">
-        <!-- Title of journal -->
-        <a class="journal-title single-journal-title" href="">
-          <h1>${dateItem.journalDate}</h1>
-        </a>
+      <div class="journal-wrapper">
+      <div class="journal single-journal">
+          <div class="journal-info single-journal-info">
+              <a class="journal-title single-journal-title" href="">
+                  <h1>${dateItem.journalDate}</h1>
+              </a>
+          </div>
+          ${tasksHTML}
       </div>
-      ${tasksHTML}
-    </div>
+      <button class="show-more">Show more</button>
+  </div>
+  
   `
 
       allJournals.innerHTML += journalDiv
