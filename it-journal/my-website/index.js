@@ -95,6 +95,21 @@ fetchData(projectUrl)
   `
 
       allJournals.innerHTML += journalDiv
+
+      // Get all 'show more' buttons
+      const showMoreButtons = document.querySelectorAll('.show-more')
+      console.log(showMoreButtons)
+
+      // Attach click event to each 'show more' button
+      showMoreButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          const journal = event.target.previousElementSibling
+          console.log(journal)
+
+          journal.style.maxHeight = 'none'
+          event.target.style.display = 'none'
+        })
+      })
     })
   })
   .catch((err) => {
