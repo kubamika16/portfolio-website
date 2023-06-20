@@ -95,20 +95,19 @@ fetchData(projectUrl)
   `
 
       allJournals.innerHTML += journalDiv
+    })
 
-      // Get all 'show more' buttons
-      const showMoreButtons = document.querySelectorAll('.show-more')
-      console.log(showMoreButtons)
+    // Get all 'show more' buttons
+    const showMoreButtons = document.querySelectorAll('.show-more')
 
-      // Attach click event to each 'show more' button
-      showMoreButtons.forEach((button) => {
-        button.addEventListener('click', (event) => {
-          const journal = event.target.previousElementSibling
-          console.log(journal)
+    // Attach click event to each 'show more' button
+    showMoreButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        // Accessing sibling element to our button (journal tile)
+        const journal = event.target.previousElementSibling
 
-          journal.style.maxHeight = 'none'
-          event.target.style.display = 'none'
-        })
+        journal.style.maxHeight = 'none'
+        event.target.style.display = 'none'
       })
     })
   })
