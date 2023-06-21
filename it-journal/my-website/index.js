@@ -81,7 +81,7 @@ fetchData(projectUrl)
 
       const journalDiv = `
       <div class="journal-wrapper">
-      <div class="journal single-journal">
+      <div class="journal single-journal fading-text">
           <div class="journal-info single-journal-info">
               <a class="journal-title single-journal-title" href="">
                   <h1>${dateItem.journalDate}</h1>
@@ -91,7 +91,6 @@ fetchData(projectUrl)
       </div>
       <button class="show-more">Show more</button>
   </div>
-  
   `
 
       allJournals.innerHTML += journalDiv
@@ -105,9 +104,11 @@ fetchData(projectUrl)
       button.addEventListener('click', (event) => {
         // Accessing sibling element to our button (journal tile)
         const journal = event.target.previousElementSibling
+        console.log(journal)
 
         journal.style.maxHeight = 'none'
         event.target.style.display = 'none'
+        journal.classList.remove('fading-text')
       })
     })
   })

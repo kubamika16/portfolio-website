@@ -59,8 +59,6 @@
 .fading-text {
   overflow: hidden;
   position: relative;
-
-  height: 70vh;
 }
 
 .fading-text::after {
