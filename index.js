@@ -37,82 +37,13 @@ const articleUrl = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/$
 //PROJECTS SECTION
 const projectQuery = encodeURIComponent('*[_type == "project"]')
 const projectUrl = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${projectQuery}`
-// fetchData(articleUrl)
-//   .then((data) =>
-//     data.result.forEach((post) => {
-//       // Creating a string with a published date
-//       // Array destructuring is used to assign the parts of the date string to variables. The rest operator (...) is used to ignore the first element of the array (the day of the week).
-//       const [, month, day, year] = new Date(post.publishedAt)
-//         .toDateString()
-//         .split(' ')
-//       const dateString = `${month} ${day}, ${year}`
-
-//       // Create new div for each post
-//       let articleDiv = document.createElement('div')
-//       articleDiv.classList.add('single-item', 'single-article')
-
-//       // HTML STRUCTURE FOR ARTICLES
-//       articleDiv.innerHTML = `
-//        <div class="single-article-logo">
-//          <img src="${sanityImageUrl(
-//            PROJECT_ID,
-//            DATASET,
-//            post.mainImage.asset._ref,
-//          )}" alt="project-logo" />
-//        </div>
-//        <div class="single-article-right">
-//          <p class="date-item single-article-date">${dateString}</p>
-//          <a href="/articles/${post.folder}/index.html" class="post-title">
-//            <h3>${post.title}</h3>
-//          </a>
-//        </div>
-//      `
-
-//       // Append the new article div to the all-articles div
-//       document.querySelector('.all-articles').appendChild(articleDiv)
-//     }),
-//   )
-//   .catch((error) => console.error('Error', error))
-
-// fetchData(projectUrl)
-//   .then((data) => {
-//     data.result.forEach((project) => {
-//       console.log(project)
-
-//       const date = ISODateDescructureFunction(project.createdAt)
-//       console.log(date)
-
-//       // Create new div for each project
-//       let projectDiv = document.createElement('div')
-//       projectDiv.classList.add('project')
-
-//       // HTML structure for single project
-//       projectDiv.innerHTML = ` <div class="date-item single-project-date">${date.month}, ${date.year}</div>
-//       <a class="project-title" href="">${project.projectTitle}</a>
-//       <p class="project-description">
-//         ${project.description[0].children[0].text}
-//       </p>
-//       <div class="buttons">
-//       <button class="project-button">
-//         <a href="/it-journal/${project.projectFolder}/index.html">Journal</a>
-//       </button>
-//       <button class="project-button">
-//         <a href="${project.demoLink}">Demo</a>
-//       </button>
-//       <button class="project-button">
-//         <a href="${project.githubLink}"><span>Source</span></a>
-//         <img src="/assets/imgs/github-white.png" alt="" />
-//       </button>
-//     </div>`
-
-//       document.querySelector('.all-projects').appendChild(projectDiv)
-//     })
-//   })
-//   .catch((err) => console.log(err))
 
 Promise.all([fetchData(articleUrl), fetchData(projectUrl)])
   .then(([articleData, projectData]) => {
-    // Handle articleData
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //ARTICLES SECTION
     articleData.result.forEach((post) => {
       // Creating a string with a published date
       // Array destructuring is used to assign the parts of the date string to variables. The rest operator (...) is used to ignore the first element of the array (the day of the week).
@@ -145,7 +76,10 @@ Promise.all([fetchData(articleUrl), fetchData(projectUrl)])
       // Append the new article div to the all-articles div
       document.querySelector('.all-articles').appendChild(articleDiv)
     })
-    // Handle projectData
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //PROJECTS SECTION
     projectData.result.forEach((project) => {
       console.log(project)
 
@@ -179,5 +113,13 @@ Promise.all([fetchData(articleUrl), fetchData(projectUrl)])
     })
   })
   .catch((error) => {
-    // Handle error
+    console.log(error)
   })
+
+// Using named function
+let someOperation = function multiplication(a, b) {
+  let nestedOperation = function division(x, y) {
+    console.log(undefinedVariable) // This will cause an error
+  }
+  nestedOperation(a, b)
+}
