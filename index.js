@@ -5,6 +5,7 @@ import {
   DATASET,
   // dateFormatter,
   ISODateDescructureFunction,
+  dateFormatter,
 } from './functions.js'
 
 document.getElementById('closeButton').addEventListener('click', function () {
@@ -25,33 +26,72 @@ if (timeElapsed < fiveMinutesInMilliseconds) {
 }
 
 //////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//ARTICLES SECTION
+//ARTICLES Query
 const articleQuery = encodeURIComponent('*[_type == "post"]')
 const articleUrl = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${articleQuery}`
 
 //////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//////////////////////////////////////////////////////
-//PROJECTS SECTION
+//PROJECTS Query
 const projectQuery = encodeURIComponent('*[_type == "project"]')
 const projectUrl = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${projectQuery}`
 
-Promise.all([fetchData(articleUrl), fetchData(projectUrl)])
-  .then(([articleData, projectData]) => {
+//////////////////////////////////////////////////////
+//LATEST JOURNALS Query
+const itJournalQuery = encodeURIComponent('*[_type == "itJournal"]')
+const itJournaltUrl = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${itJournalQuery}`
+
+Promise.all([
+  fetchData(articleUrl),
+  fetchData(projectUrl),
+  fetchData(itJournaltUrl),
+])
+  .then(([articleData, projectData, itJournalData]) => {
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////
+    //IT JOURNAL SECTION
+
+    // First, I need to sort journals. They are retrieved from Sanity in unorganized way
+    itJournalData.result.sort(
+      (a, b) => new Date(b.journalDate) - new Date(a.journalDate),
+    )
+    // Then I have to store all tasks retrieved from Sanity. I need to do it because later i want to display only first 5 of them
+    const allTasks = []
+    itJournalData.result.forEach((entry, index) => {
+      entry.tasks.forEach((task) => {
+        // Adding journal date to the certain task object and putting that task in allTasks array
+        task.journalDate = entry.journalDate
+        allTasks.push(task)
+      })
+    })
+    // Take the first 5 tasks
+    const firstFiveTasks = allTasks.slice(0, 5)
+
+    // Implementing these 5 tasks in my main page.
+    firstFiveTasks.forEach((task) => {
+      // Create new div for each journal entry
+      let entryDiv = document.createElement('a')
+      entryDiv.classList.add('single-item', 'single-post')
+      // HTML STRUCTURE FOR JOURNAL ENTRIES
+      entryDiv.innerHTML = `
+         <div class="post-title">
+           <h3>${task.title}</h3>
+         </div>
+         <div class="post-info">
+           <p class="date-item latest-journal-date">
+             ${dateFormatter(task.journalDate)}
+           </p>
+         </div>`
+
+      // Append the new article div to the all-articles div
+      document.querySelector('.posts').appendChild(entryDiv)
+    })
+
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
     //ARTICLES SECTION
     articleData.result.forEach((post) => {
-      // Creating a string with a published date
-      // Array destructuring is used to assign the parts of the date string to variables. The rest operator (...) is used to ignore the first element of the array (the day of the week).
-      const [, month, day, year] = new Date(post.publishedAt)
-        .toDateString()
-        .split(' ')
-      const dateString = `${month} ${day}, ${year}`
-
       // Create new div for each post
       let articleDiv = document.createElement('div')
       articleDiv.classList.add('single-item', 'single-article')
@@ -66,7 +106,9 @@ Promise.all([fetchData(articleUrl), fetchData(projectUrl)])
          )}" alt="project-logo" />
        </div>
        <div class="single-article-right">
-         <p class="date-item single-article-date">${dateString}</p>
+         <p class="date-item single-article-date">${dateFormatter(
+           post.publishedAt,
+         )}</p>
          <a href="/articles/${post.folder}/index.html" class="post-title">
            <h3>${post.title}</h3>
          </a>
@@ -81,10 +123,10 @@ Promise.all([fetchData(articleUrl), fetchData(projectUrl)])
     //////////////////////////////////////////////////////
     //PROJECTS SECTION
     projectData.result.forEach((project) => {
-      console.log(project)
+      // console.log(project)
 
       const date = ISODateDescructureFunction(project.createdAt)
-      console.log(date)
+      // console.log(date)
 
       // Create new div for each project
       let projectDiv = document.createElement('div')
@@ -115,11 +157,3 @@ Promise.all([fetchData(articleUrl), fetchData(projectUrl)])
   .catch((error) => {
     console.log(error)
   })
-
-// Using named function
-let someOperation = function multiplication(a, b) {
-  let nestedOperation = function division(x, y) {
-    console.log(undefinedVariable) // This will cause an error
-  }
-  nestedOperation(a, b)
-}
