@@ -117,37 +117,63 @@ fetchData(projectUrl)
       })
     })
 
-    // Get the fragment from the URL
+    ////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
+    // Part of the code below works when user on the main page clicked on one of five journal entry titles
+
+    // Get the fragment from the URL. This is the part of the URL that follows the '#'.
+    // It can be used to reference an element in the page, and is often used for 'jumping' to that element on page load.
     let fragment = window.location.hash.substring(1) // remove the '#'
 
+    // This function takes a fragment (a part of the URL that starts with '#'), and it removes the fading effect from the journal entry associated with that fragment,
+    // then scrolls to the journal entry. The function returns true if it was able to find the journal entry and perform the operations, and false otherwise.
     function removeFadeAndScrollToFragment(fragment) {
+      // Try to get the HTML element with the ID specified by the fragment.
+      // If there's no such element, 'getElementById' will return null.
       let element = document.getElementById(fragment)
+
+      // Check if the element exists. If it doesn't, this function cannot do anything, so it returns false.
       if (element) {
+        // Try to find the closest ancestor of the element with the class 'journal-wrapper'.
+        // This is the containing element that we're going to manipulate.
         let journalWrapper = element.closest('.journal-wrapper')
+
+        // Check if we were able to find the 'journal-wrapper'.
         if (journalWrapper) {
+          // Get the journal and 'show more' button elements, which are the children of the journalWrapper.
           let journal = journalWrapper.querySelector('.single-journal')
           let showMoreButton = journalWrapper.querySelector('.show-more')
 
-          // Remove 'fading-text' from the journal
+          // Remove the 'fading-text' class from the journal. This will stop the fading effect.
           journal.classList.remove('fading-text')
+
+          // Set the max-height of the journal to 'none'. This will make the journal show in full, even if it's larger than the original 70vh.
           journal.style.maxHeight = 'none'
 
-          // Hide the 'show more' button
+          // Hide the 'show more' button. We don't need it anymore because we're showing the full journal.
           showMoreButton.style.display = 'none'
 
-          // Scroll to the element
+          // Scroll the page to the journal entry. This will make the journal entry be at the top of the viewport, if possible.
           element.scrollIntoView()
+
+          // Return true, because we were able to find the element and perform all operations successfully.
           return true
         }
       }
+
+      // If we got here, it means we couldn't find either the element or the 'journal-wrapper'. In this case, we return false to indicate that the function couldn't perform its job.
       return false
     }
 
-    // Check every 100ms if the element with this ID exists
+    // This line starts an interval that will run the provided function every 100ms.
+    // The function will check if the element with the provided fragment exists, and if so, it will stop the interval and perform some operations on the element.
     let intervalId = setInterval(function () {
+      // Check if the element exists and the operations were performed successfully.
       if (removeFadeAndScrollToFragment(fragment)) {
+        // If so, stop the interval. We don't need to keep checking for the element, because we've found it and done everything we needed to do.
         clearInterval(intervalId)
       }
+      // If not, the interval will automatically run the function again after 100ms.
     }, 100)
   })
   .catch((err) => {
