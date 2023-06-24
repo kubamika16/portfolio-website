@@ -51,31 +51,40 @@ Promise.all([
     //////////////////////////////////////////////////////
     //IT JOURNAL SECTION
 
-    // First, I need to sort journals. They are retrieved from Sanity in unorganized way
-    itJournalData.result.sort(
-      (a, b) => new Date(b.journalDate) - new Date(a.journalDate),
-    )
-    // Then I have to store all tasks retrieved from Sanity. I need to do it because later i want to display only first 5 of them
-    const allTasks = []
-    itJournalData.result.forEach((entry, index) => {
-      entry.tasks.forEach((task) => {
-        // Adding journal date to the certain task object and putting that task in allTasks array
-        task.journalDate = entry.journalDate
-        allTasks.push(task)
-      })
-    })
-    // Take the first 5 tasks
+    // Get all tasks, adding the journal date to each task
+    let allTasks = itJournalData.result.reduce((acc, entry) => {
+      let tasksWithDate = entry.tasks.map((task) => ({
+        ...task,
+        journalDate: entry.journalDate,
+      }))
+      return [...acc, ...tasksWithDate]
+    }, [])
+
+    // Sort tasks by date and get the first 5
+    allTasks.sort((a, b) => new Date(b.journalDate) - new Date(a.journalDate))
     const firstFiveTasks = allTasks.slice(0, 5)
+    console.log(firstFiveTasks)
+
+    // Create a document fragment
+    let fragment = document.createDocumentFragment()
 
     // Implementing these 5 tasks in my main page.
     firstFiveTasks.forEach((task) => {
       // Create new div for each journal entry
       let entryDiv = document.createElement('a')
+      let tileID = task.title
+        .toLowerCase()
+        .split(' ')
+        .join('-')
+        .replace(/[^a-z0-9-]/gi, '')
+      console.log(task.projectFolderName)
+      entryDiv.href = `/it-journal/${task.projectFolderName}/index.html#${tileID}`
+
       entryDiv.classList.add('single-item', 'single-post')
       // HTML STRUCTURE FOR JOURNAL ENTRIES
       entryDiv.innerHTML = `
          <div class="post-title">
-           <h3>${task.title}</h3>
+           <h3> ${task.title}</h3>
          </div>
          <div class="post-info">
            <p class="date-item latest-journal-date">
@@ -83,9 +92,12 @@ Promise.all([
            </p>
          </div>`
 
-      // Append the new article div to the all-articles div
-      document.querySelector('.posts').appendChild(entryDiv)
+      // Append the new article div to the fragment
+      fragment.appendChild(entryDiv)
     })
+
+    // Append the fragment to the posts
+    document.querySelector('.posts').appendChild(fragment)
 
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////

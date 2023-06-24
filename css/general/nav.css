@@ -7,6 +7,10 @@
   --articles-color: magenta;
 }
 
+html {
+  scroll-padding-top: 4rem;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -100,6 +104,10 @@ nav {
 }
 
 @media (min-width: 700px) {
+  html {
+    scroll-padding-top: 4.5rem;
+  }
+
   .left-side-nav {
     display: flex;
     flex-direction: column;

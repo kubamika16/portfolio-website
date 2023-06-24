@@ -54,15 +54,20 @@ fetchData(projectUrl)
     )
 
     // Time for implementing that Sanity.io fetch data inside my website
-    filteredData.forEach((dateItem, index) => {
+    filteredData.forEach((dateItem) => {
       const tasksHTML = dateItem.tasks
         .map((task) => {
           const notesHTML = formatSanityBody(task.notes)
-
+          let tileID = task.title
+            .toLowerCase()
+            .split(' ')
+            .join('-')
+            .replace(/[^a-z0-9-]/gi, '')
+          console.log(tileID)
           return `
               <div class="journal-content">
                 <div class="journal-tile">
-                  <div class="tile-section title">
+                  <div class="tile-section title" id="${tileID}">
                     <h3><strong>${task.title}</strong></h3>
                   </div>
                   <div class="tile-section introduction">
@@ -111,6 +116,39 @@ fetchData(projectUrl)
         journal.classList.remove('fading-text')
       })
     })
+
+    // Get the fragment from the URL
+    let fragment = window.location.hash.substring(1) // remove the '#'
+
+    function removeFadeAndScrollToFragment(fragment) {
+      let element = document.getElementById(fragment)
+      if (element) {
+        let journalWrapper = element.closest('.journal-wrapper')
+        if (journalWrapper) {
+          let journal = journalWrapper.querySelector('.single-journal')
+          let showMoreButton = journalWrapper.querySelector('.show-more')
+
+          // Remove 'fading-text' from the journal
+          journal.classList.remove('fading-text')
+          journal.style.maxHeight = 'none'
+
+          // Hide the 'show more' button
+          showMoreButton.style.display = 'none'
+
+          // Scroll to the element
+          element.scrollIntoView()
+          return true
+        }
+      }
+      return false
+    }
+
+    // Check every 100ms if the element with this ID exists
+    let intervalId = setInterval(function () {
+      if (removeFadeAndScrollToFragment(fragment)) {
+        clearInterval(intervalId)
+      }
+    }, 100)
   })
   .catch((err) => {
     // If anything goes wrong with fetching or processing the data, log the error
