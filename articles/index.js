@@ -14,7 +14,7 @@ const allArticles = document.querySelector('.year-section')
 fetchData(PROJECT_URL)
   .then((data) => {
     const body = data.result
-    console.log(body)
+    body.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
 
     data.result.forEach((article) => {
       console.log(article)
@@ -22,7 +22,7 @@ fetchData(PROJECT_URL)
       const articlePublishedDate = ISODateDescructureFunction(
         article.publishedAt,
       )
-      console.log(articlePublishedDate)
+      // console.log(articlePublishedDate)
 
       const articleFolder = article.folder
 
@@ -42,5 +42,3 @@ fetchData(PROJECT_URL)
     })
   })
   .catch((error) => console.error('Error:', error))
-
-console.log('Witaj')

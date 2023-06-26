@@ -8,23 +8,6 @@ import {
   dateFormatter,
 } from './functions.js'
 
-document.getElementById('closeButton').addEventListener('click', function () {
-  document.querySelector('.overlay').style.display = 'none'
-  localStorage.setItem('overlayHiddenAt', Date.now())
-})
-
-// Check if the overlay should be displayed
-const overlayHiddenAt = localStorage.getItem('overlayHiddenAt')
-const timeElapsed = Date.now() - (overlayHiddenAt || 0)
-
-const fiveMinutesInMilliseconds = 5 * 60 * 10000
-
-if (timeElapsed < fiveMinutesInMilliseconds) {
-  document.querySelector('.overlay').style.display = 'none'
-} else {
-  document.querySelector('.overlay').style.display = 'flex'
-}
-
 //////////////////////////////////////////////////////
 //ARTICLES Query
 const articleQuery = encodeURIComponent('*[_type == "post"]')
@@ -103,6 +86,9 @@ Promise.all([
     //////////////////////////////////////////////////////
     //////////////////////////////////////////////////////
     //ARTICLES SECTION
+    articleData.result.sort(
+      (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt),
+    )
     articleData.result.forEach((post) => {
       // Create new div for each post
       let articleDiv = document.createElement('div')
@@ -145,15 +131,21 @@ Promise.all([
       projectDiv.classList.add('project')
 
       // HTML structure for single project
+
+      let projectJournalButton = ''
+      if (project.projectFolder) {
+        projectJournalButton = `<button class="project-button">
+        <a href="/it-journal/${project.projectFolder}/index.html">Journal</a>
+      </button>`
+      }
+
       projectDiv.innerHTML = ` <div class="date-item single-project-date">${date.month}, ${date.year}</div>
       <a class="project-title" href="">${project.projectTitle}</a>
       <p class="project-description">
         ${project.description[0].children[0].text}
       </p>
       <div class="buttons">
-      <button class="project-button">
-        <a href="/it-journal/${project.projectFolder}/index.html">Journal</a>
-      </button>
+      ${projectJournalButton}
       <button class="project-button">
         <a href="${project.demoLink}">Demo</a>
       </button>
