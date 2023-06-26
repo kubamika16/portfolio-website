@@ -1,12 +1,32 @@
 /* Globally accessible variables */
 :root {
-  --gray-10: #181818;
-  --border-slightly-grey: #353535;
-  --background-slightly-grey: #212121;
+  /* Dark theme properties */
+  --background-color-dark: #181818;
+  --font-color-dark: white;
+  --code-background-color-dark: #f0f0f0;
+  --code-color-dark: #c7254e;
+  --border-color-dark: #353535;
+  --background-slightly-grey-dark: #212121;
+
+  /* Light theme properties */
+  --background-color-light: #c6c6c6;
+  --font-color-light: black;
+  --code-background-color-light: #e0e0e0;
+  --code-color-light: #333;
+  --border-color-light: #ddd;
+  --background-slightly-grey-light: #f0f0f0;
+
+  /* Initial values - set to dark theme */
+  --background-color: var(--background-color-dark);
+  --font-color: var(--font-color-dark);
+  --code-background-color: var(--code-background-color-dark);
+  --code-color: var(--code-color-dark);
+  --border-color: var(--border-color-dark);
+  --background-slightly-grey: var(--background-slightly-grey-dark);
 }
 
 body {
-  background-color: var(--gray-10);
+  background-color: var(--background-color);
 
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
     Arial, sans-serif;
@@ -47,14 +67,14 @@ span,
 ul,
 .contact a,
 div {
-  color: white;
+  color: var(--font-color);
 }
 
 pre {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: var(--code-background-color);
+  border: 1px solid var(--border-color);
   border-left: 3px solid #f36d33;
-  color: #333;
+  color: var(--code-color);
   page-break-inside: avoid;
   font-family: monospace;
   font-size: 15px;
@@ -68,7 +88,7 @@ pre {
 }
 
 code {
-  background-color: #f0f0f0;
+  background-color: var(--background-slightly-grey);
   border-radius: 3px;
   color: #c7254e;
   padding: 2px 4px;

@@ -29,7 +29,7 @@ html {
 
   font-size: 1rem;
 
-  background-color: var(--gray-10);
+  /* background-color: var(--gray-10); */
   z-index: 1;
 }
 
@@ -97,8 +97,6 @@ nav {
 }
 
 .light-toggle {
-  background-color: rgb(45, 45, 45);
-
   padding: 0.1rem 0.2rem;
   border-radius: 20%;
 }
