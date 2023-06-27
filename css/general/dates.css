@@ -4,7 +4,7 @@
   --date-font: Menlo, 'IBM Plex Mono', Menlo, monospace;
   --date-color-green: #5eddac;
   --date-color-pink: #f57ad0;
-  --date-color-grey: grey;
+  --date-color-grey: rgb(83, 83, 83);
 }
 
 /* ------------------------------------ */

@@ -9,11 +9,11 @@
   --background-slightly-grey-dark: #212121;
 
   /* Light theme properties */
-  --background-color-light: #c6c6c6;
+  --background-color-light: #e3e3e3;
   --font-color-light: black;
   --code-background-color-light: #e0e0e0;
   --code-color-light: #333;
-  --border-color-light: #ddd;
+  --border-color-light: #a8a8a8;
   --background-slightly-grey-light: #f0f0f0;
 
   /* Initial values - set to dark theme */
@@ -127,6 +127,10 @@ code {
   align-items: center;
   gap: 1rem;
   text-decoration: none;
+}
+
+.light-theme .single-item {
+  border-color: var(--border-color-light);
 }
 
 @media (min-width: 700px) {

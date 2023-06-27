@@ -31,6 +31,15 @@ html {
 
   /* background-color: var(--gray-10); */
   z-index: 1;
+  /* background-color: inherit; */
+}
+
+.light-theme .navigation {
+  background-color: var(--background-color-light);
+}
+
+.dark-theme .navigation {
+  background-color: var(--gray-10);
 }
 
 .navigation::after {
@@ -62,6 +71,11 @@ nav {
 
 .nav-item:hover {
   color: white;
+}
+
+/* Hover state when dark-theme is active */
+.light-theme .nav-item:hover {
+  color: black;
 }
 
 .nav-item a {

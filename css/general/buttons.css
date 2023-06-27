@@ -1,6 +1,8 @@
 :root {
   --border-slightly-grey: #353535;
   --background-slightly-grey: #212121;
+
+  --border-slightly-grey-light-theme: #a3a3a3;
 }
 
 button {
@@ -12,6 +14,14 @@ button {
 button:hover {
   border: 1px solid rgb(86, 86, 86);
   cursor: pointer;
+}
+
+.light-theme button {
+  border: 1px solid var(--border-slightly-grey-light-theme);
+}
+
+.light-theme button:hover {
+  border: 1px solid rgb(88, 88, 88);
 }
 
 .view-all-btn {
@@ -33,6 +43,14 @@ button:hover {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.light-theme .project-button {
+  background-color: var(--background-slightly-grey);
+}
+
+.light-theme .project-button img {
+  background-color: black;
 }
 
 .project-button img {

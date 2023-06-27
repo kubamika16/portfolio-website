@@ -10,6 +10,7 @@ toggleButton.addEventListener('click', function () {
 
 function switchToLightTheme() {
   document.body.classList.remove('dark-theme')
+  document.body.classList.add('light-theme')
   document.body.style.setProperty(
     '--background-color',
     'var(--background-color-light)',
@@ -28,6 +29,7 @@ function switchToLightTheme() {
 }
 
 function switchToDarkTheme() {
+  document.body.classList.remove('light-theme')
   document.body.classList.add('dark-theme')
   document.body.style.setProperty(
     '--background-color',

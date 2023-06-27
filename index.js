@@ -139,21 +139,27 @@ Promise.all([
       </button>`
       }
 
-      projectDiv.innerHTML = ` <div class="date-item single-project-date">${date.month}, ${date.year}</div>
-      <a class="project-title" href="">${project.projectTitle}</a>
-      <p class="project-description">
-        ${project.description[0].children[0].text}
-      </p>
-      <div class="buttons">
-      ${projectJournalButton}
-      <button class="project-button">
-        <a href="${project.demoLink}">Demo</a>
-      </button>
-      <button class="project-button">
-        <a href="${project.githubLink}"><span>Source</span></a>
-        <img src="/assets/imgs/github-white.png" alt="" />
-      </button>
-    </div>`
+      projectDiv.innerHTML = `
+      <div class="project-data">
+          <div class="date-item single-project-date">
+            ${date.month}, ${date.year}
+          </div>
+          <a class="project-title" href="">${project.projectTitle}</a>
+          <p class="project-description">
+            ${project.description[0].children[0].text}
+          </p>
+        </div>
+        <div class="buttons">
+          ${projectJournalButton}
+          <button class="project-button">
+            <a href="${project.demoLink}">Demo</a>
+          </button>
+          <button class="project-button">
+            <a href="${project.githubLink}"><span>Source</span></a>
+            <img src="/assets/imgs/github-white.png" alt="" />
+          </button>
+        </div>
+    `
 
       document.querySelector('.all-projects').appendChild(projectDiv)
     })
