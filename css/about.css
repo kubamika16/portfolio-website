@@ -6,11 +6,17 @@
   --it-journal-color: green;
   --projects-color: blue;
   --articles-color: magenta;
+
+  --border-color-light: #9b9b9b;
 }
 
 .nav-item.about a {
   border-bottom: 3px solid var(--about-color);
   color: white;
+}
+
+.light-theme .nav-item.about a {
+  color: black;
 }
 
 .about-me-right {
@@ -41,6 +47,10 @@
 
     width: 12rem;
     height: 17rem;
+  }
+
+  .light-theme .me-tile {
+    border-color: var(--border-color-light);
   }
 
   .me-tile p {

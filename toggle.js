@@ -3,8 +3,10 @@ const toggleButton = document.querySelector('.light-toggle')
 toggleButton.addEventListener('click', function () {
   if (document.body.classList.contains('dark-theme')) {
     switchToLightTheme()
-  } else {
+  } else if (document.body.classList.contains('light-theme')) {
     switchToDarkTheme()
+  } else {
+    switchToLightTheme()
   }
 })
 
