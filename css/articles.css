@@ -9,13 +9,11 @@
 }
 
 a {
-  color: white;
   text-decoration: none;
 }
 
 .nav-item.articles a {
   border-bottom: 3px solid var(--articles-color);
-  color: white;
 }
 
 .all-articles {
@@ -54,6 +52,10 @@ a {
   font-family: var(--date-font);
   display: none;
   text-align: right;
+}
+
+.light-theme .article-date {
+  color: var(--date-color-grey);
 }
 
 @media (min-width: 700px) {

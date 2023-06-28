@@ -14,6 +14,10 @@
   color: white;
 }
 
+.light-theme .nav-item.it-journal a {
+  color: black;
+}
+
 .all-journals {
   display: flex;
   flex-direction: column;
@@ -74,6 +78,14 @@
     rgba(33, 33, 33, 0.1)
   );
   pointer-events: none; /* Prevents the pseudo-element from blocking any interactions with the text */
+}
+
+.light-theme .fading-text::after {
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.1)
+  );
 }
 
 .journal-title h1 {
@@ -154,6 +166,10 @@ article::before {
   border-radius: 5px;
 
   padding: 0.5rem 1rem;
+}
+
+.light-theme .journal-tile {
+  background-color: #e3e3e3;
 }
 
 .tile-section {

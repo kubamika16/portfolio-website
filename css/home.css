@@ -134,14 +134,6 @@
   border-color: var(--border-color-light);
 }
 
-.single-project-date {
-  color: var(--date-color-pink);
-}
-
-.light-theme .single-project-date {
-  color: var(--date-color-grey);
-}
-
 .project-title {
   font-size: 1.1rem;
   font-weight: 500;

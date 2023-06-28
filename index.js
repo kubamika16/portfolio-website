@@ -130,7 +130,7 @@ Promise.all([
       let projectDiv = document.createElement('div')
       projectDiv.classList.add('project')
 
-      // HTML structure for single project
+      // HTML structure for the single project
 
       let projectJournalButton = ''
       if (project.projectFolder) {

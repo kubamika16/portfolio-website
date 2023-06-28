@@ -33,9 +33,7 @@ fetchData(PROJECT_URL)
       >
         ${articleTitle}
       </a>
-      <p class="article-date">
-        <time>${articlePublishedDate.month} ${articlePublishedDate.day}</time>
-      </p>
+      <p class="article-date">${articlePublishedDate.month} ${articlePublishedDate.day}</p>
       </div>`
 
       allArticles.innerHTML += articleDiv

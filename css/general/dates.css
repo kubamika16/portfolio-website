@@ -17,3 +17,11 @@
 
   margin: 0;
 }
+
+.single-project-date {
+  color: var(--date-color-pink);
+}
+
+.light-theme .single-project-date {
+  color: var(--date-color-grey);
+}

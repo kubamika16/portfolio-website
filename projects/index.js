@@ -48,7 +48,7 @@ fetchData(projectUrl)
       projectDiv.innerHTML = ` <div class="date-item single-project-date">${
         date.month
       }, ${date.year}</div>
-      <a class="project-title" href="">${project.projectTitle}</a>
+      <a class="project-title">${project.projectTitle}</a>
       <p class="project-description">
         ${project.description[0].children[0].text}
       </p>
