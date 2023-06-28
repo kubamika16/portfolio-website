@@ -11,7 +11,7 @@
   /* Light theme properties */
   --background-color-light: #e3e3e3;
   --font-color-light: black;
-  --code-background-color-light: #e0e0e0;
+  --code-background-color-light: #f0f0f0;
   --code-color-light: #333;
   --border-color-light: #a8a8a8;
   --background-slightly-grey-light: #f0f0f0;
@@ -88,7 +88,7 @@ pre {
 }
 
 code {
-  background-color: var(--background-slightly-grey);
+  /* background-color: var(--background-slightly-grey); */
   border-radius: 3px;
   color: #c7254e;
   padding: 2px 4px;
