@@ -90,6 +90,7 @@ function formatSanityBody(body) {
           return wrapTextWithTag(textContent, blockStyleToHtmlTag[block.style])
         }
       } else if (block._type === 'code') {
+        // console.log(body)
         return `<pre><code>${block.code}</code></pre>`
       }
 

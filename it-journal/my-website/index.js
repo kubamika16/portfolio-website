@@ -57,13 +57,14 @@ fetchData(projectUrl)
     filteredData.forEach((dateItem) => {
       const tasksHTML = dateItem.tasks
         .map((task) => {
+          console.log(task.notes)
           const notesHTML = formatSanityBody(task.notes)
           let tileID = task.title
             .toLowerCase()
             .split(' ')
             .join('-')
             .replace(/[^a-z0-9-]/gi, '')
-          console.log(tileID)
+          // console.log(tileID)
           return `
               <div class="journal-content">
                 <div class="journal-tile">

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jakub Mika</title>
+
+    <!-- CSS file that contains properties for a whole website -->
+    <link rel="stylesheet" href="/css/general/main.css" />
+
+    <!-- CSS file that contains properties for a navigation pannel -->
+    <link rel="stylesheet" href="/css/general/nav.css" />
+
+    <!-- CSS file that contains properties for articles -->
+    <link rel="stylesheet" href="/css/articles.css" />
+
+    <!-- CSS file that contains properties for THIS single article -->
+    <link rel="stylesheet" href="/articles/style.css" />
+
+    <!-- CSS file that contains properties for contact footer -->
+    <link rel="stylesheet" href="/css/general/footer.css" />
+
+    <link rel="stylesheet" href="/articles/style.css" />
+
+    <!-- CSS file that contains properties for buttons -->
+    <link rel="stylesheet" href="/css/general/buttons.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- NAVIGATION -->
+      <section class="navigation">
+        <div class="left-side-nav">
+          <div class="website-author">
+            <span><a href="/index.html">Jakub Mika</a></span>
+          </div>
+          <nav>
+            <div class="nav-item home"><a href="/index.html">Home</a></div>
+            <div class="nav-item about">
+              <a href="/about/index.html">About</a>
+            </div>
+            <div class="nav-item it-journal">
+              <a href="/it-journal/index.html">IT Journal</a>
+            </div>
+            <div class="nav-item projects">
+              <a href="/projects/index.html">Projects</a>
+            </div>
+            <div class="nav-item articles">
+              <a href="/articles/index.html">Articles</a>
+            </div>
+          </nav>
+        </div>
+        <button class="light-toggle">🌙</button>
+      </section>
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- MAIN -->
+      <main>
+        <div class="container articles">
+          <div class="container-header">
+            <h1>Understanding React.js</h1>
+          </div>
+          <div class="article-content"></div>
+        </div>
+      </main>
+
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- -------------------- -->
+      <!-- FOOTER -->
+      <footer>
+        <div class="container footer">
+          <p class="made-by">Made by Jakub Mika</p>
+          <p class="questions-feedback">
+            If you have any questions or feedback, feel free to ask.
+          </p>
+          <div class="contact-section">
+            <div class="contact">
+              <p class="contact-data">kuba.mika16@gmail.com</p>
+              <img src="/assets/imgs/gmail.png" alt="" class="contact-logo" />
+            </div>
+            <div class="contact">
+              <a
+                href="https://github.com/kubamika16"
+                target="_blank"
+                class="contact-data"
+              >
+                GitHub
+              </a>
+              <img src="/assets/imgs/github.png" alt="" class="contact-logo" />
+            </div>
+            <div class="contact">
+              <a
+                href="https://www.linkedin.com/in/jakub-mika-a21853174/"
+                class="contact-data"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+              <img
+                src="/assets/imgs/linkedIn.png"
+                alt=""
+                class="contact-logo"
+              />
+            </div>
+            <div class="contact">
+              <p class="contact-data">
+                <a href="tel:+447743564345" class="phone-link">
+                  (+44) 0 7743 564345
+                </a>
+              </p>
+              <img src="/assets/imgs/contact.png" alt="" class="contact-logo" />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="index.js" type="module"></script>
+    <script src="/toggle.js" type="module"></script>
+    <script type="module" src="/articles/uds-react/index.js"></script>
+  </body>
+</html>

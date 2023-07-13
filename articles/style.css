@@ -20,10 +20,10 @@ img {
   width: 70%;
 }
 
-pre {
+/* pre {
   display: inline;
   margin-left: 0;
-}
+} */
 
 @media (min-width: 700px) {
   .article-content {

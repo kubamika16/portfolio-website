@@ -52,7 +52,22 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'array',
+      of: [
+        {type: 'block'},
+        {
+          type: 'code',
+          options: {
+            withFilename: true,
+            languageAlternatives: [
+              {title: 'Javascript', value: 'javascript'},
+              {title: 'HTML', value: 'html'},
+              {title: 'CSS', value: 'css'},
+              {title: 'React', value: 'jsx'},
+            ],
+          },
+        },
+      ],
     }),
   ],
 
