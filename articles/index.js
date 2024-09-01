@@ -29,7 +29,7 @@ fetchData(PROJECT_URL)
       const articleDiv = `<div class="article">
       <a
         class="article-name"
-        href="/articles/${articleFolder}/index.html"
+        href="../articles/${articleFolder}/index.html"
       >
         ${articleTitle}
       </a>
